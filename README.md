@@ -1,5 +1,7 @@
 # FDE Enterprise AI Pre-Implementation Research and Solution Skill Package
 
+![FDE Research: nine skills and one unified entry connect discovery, baseline analysis, diagnosis, AI scenarios, an optional prototype, business proposal, implementation readiness, technical architecture, and delivery quotation.](docs/assets/fde-research-cover.png)
+
 **Publication preparation 2.3.0 · 2026-10-09.** This repository installs, runs, tests, and releases independently; no Chinese edition is required. **Publicly visible, all rights reserved; no open-source license is granted.** Usage instructions are for authorized users; see [LICENSE](LICENSE) and [provenance](NOTICE.md).
 
 Start with [cross-platform installation](docs/github-installation.md); maintainers use [testing and release](docs/releasing.md). Release archives contain only skill resources. The repository also contains CI and this edition's historical validation evidence. Use the installer to keep `.git` and evidence out of agent skill directories.

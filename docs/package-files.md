@@ -139,3 +139,4 @@ Every installation resource is listed below. Repository-only files are `.github/
 |[write-business-ai-proposal/references/proposal-structure.md](../write-business-ai-proposal/references/proposal-structure.md)|Business proposal structure, function entries, human–machine responsibilities, and cross-check requirements.|
 |[write-business-ai-proposal/references/word-format-and-review.md](../write-business-ai-proposal/references/word-format-and-review.md)|Word layout, image placement, rendering, and review requirements for the business proposal.|
 |[write-business-ai-proposal/SKILL.md](../write-business-ai-proposal/SKILL.md)|Agent entry for executing business proposal: scope, steps, boundaries, and entries to detailed resources.|
+|[docs/assets/fde-research-cover.png](../docs/assets/fde-research-cover.png)|English visual abstract: an unfolding project dossier turns business evidence into research findings, an AI proposal, technical design, and a delivery estimate.|

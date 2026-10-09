@@ -2,6 +2,8 @@
 
 ## 2.3.0 — 2026-10-09
 
+- Added an original English project-dossier cover illustrating business evidence, the optional prototype, and final preparation deliverables from the nine-skill package.
+
 - Independent repository structure, all-rights-reserved notice, and provenance inventory.
 - Cross-platform installation, deterministic ZIPs, complete manifests, overwrite protection, pinned direct test dependencies, and a self-contained regression runner.
 - Windows/Linux CI, manual LibreOffice check, and independent edition-only historical rendering evidence.
