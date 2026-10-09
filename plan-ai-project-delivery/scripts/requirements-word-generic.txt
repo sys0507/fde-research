@@ -1,0 +1,7 @@
+# Install into a project-selected environment when authorized.
+python-docx>=1.1
+Pillow>=10
+lxml>=4.9
+pypdf>=5
+pdfplumber>=0.11
+pypdfium2>=4.30

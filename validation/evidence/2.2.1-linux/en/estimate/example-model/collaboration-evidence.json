@@ -1,0 +1,156 @@
+{
+  "agent_work_details": [
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Shared authorization and retrieval delivery record",
+      "package_id": "P1",
+      "review_effort_ids": [
+        "H3"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Business assistant development delivery record",
+      "package_id": "P2",
+      "review_effort_ids": [
+        "H3"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Business configuration and feedback delivery record",
+      "package_id": "P3",
+      "review_effort_ids": [
+        "H2"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Functional and regression test delivery record",
+      "package_id": "P4",
+      "review_effort_ids": [
+        "H3"
+      ],
+      "reviewer": "qa",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Risk treatment delivery record",
+      "package_id": "P5",
+      "review_effort_ids": [
+        "H2"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Deployment and handoff delivery record",
+      "package_id": "P6",
+      "review_effort_ids": [
+        "H2"
+      ],
+      "reviewer": "ops",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    }
+  ],
+  "api_request_groups": [
+    {
+      "agent_work_refs": [
+        "P2:A1"
+      ],
+      "context_components": [
+        {
+          "basis": "Illustrative average-volume assumption",
+          "description": "System instructions, interfaces, and task requirements",
+          "id": "instructions",
+          "tokens": 2000
+        },
+        {
+          "basis": "Slice-relevant file context, not the entire repository",
+          "description": "Relevant source code and tests",
+          "id": "code",
+          "tokens": 8000
+        },
+        {
+          "basis": "Average includes repeated context; re-estimate longer context",
+          "description": "Tool results and short-round history",
+          "id": "history",
+          "tokens": 2000
+        }
+      ],
+      "evidence": "Independent algorithm example without measured traces; output excludes separately charged reasoning, which must be added if the provider bills it separately",
+      "expense_id": "E2",
+      "id": "G1",
+      "iteration_basis": "Eight slices times five rounds, 12 requests per round; calibrate against real calls and repairs during execution",
+      "model": "Example model A",
+      "output_tokens_per_request": 1200,
+      "phase": "Implementation, testing, normal repair, and regression",
+      "requests_per_run": 12,
+      "runs": 40
+    }
+  ],
+  "dependency_evidence": [
+    {
+      "kind": "technical",
+      "package_id": "P2",
+      "predecessor_id": "P1",
+      "required_output": "Shared authorization and retrieval delivery record",
+      "why_blocks_start": "This package needs a usable foundation-service contract and connection result; split an early prerequisite slice if its contract can be delivered sooner."
+    },
+    {
+      "kind": "technical",
+      "package_id": "P3",
+      "predecessor_id": "P2",
+      "required_output": "Business assistant development delivery record",
+      "why_blocks_start": "This package only changes configuration of usable functions and therefore requires their first version."
+    },
+    {
+      "kind": "technical",
+      "package_id": "P4",
+      "predecessor_id": "P2",
+      "required_output": "Business assistant development delivery record",
+      "why_blocks_start": "This verifies the integrated first version; split test design into an independent prerequisite-free package if it can start earlier."
+    },
+    {
+      "kind": "acceptance",
+      "package_id": "P5",
+      "predecessor_id": "P4",
+      "required_output": "Functional and regression test delivery record",
+      "why_blocks_start": "The target-environment risk record found during testing is input to this treatment."
+    },
+    {
+      "kind": "acceptance",
+      "package_id": "P6",
+      "predecessor_id": "P3",
+      "required_output": "Business configuration and feedback delivery record",
+      "why_blocks_start": "Formal deployment requires configuration review and integrated verification to pass; split deployment-script preparation earlier when possible."
+    },
+    {
+      "kind": "acceptance",
+      "package_id": "P6",
+      "predecessor_id": "P4",
+      "required_output": "Functional and regression test delivery record",
+      "why_blocks_start": "Formal deployment requires configuration review and integrated verification to pass; split deployment-script preparation earlier when possible."
+    }
+  ]
+}

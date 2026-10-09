@@ -1,0 +1,8 @@
+$ /usr/bin/python3 -B /home/claude/v2/skills/plan-ai-project-delivery/scripts/estimate.py run --model /home/claude/v2/skills/plan-ai-project-delivery/assets/example-model.json --output /tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/estimate/example-model
+[cwd] /home/claude/v2/skills/plan-ai-project-delivery/scripts
+[exit] 0
+
+--- stdout ---
+PASS run
+
+--- stderr ---

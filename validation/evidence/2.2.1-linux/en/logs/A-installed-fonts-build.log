@@ -1,0 +1,8 @@
+$ /usr/bin/python3 -B /home/claude/v2/skills/plan-ai-project-delivery/scripts/build_report.py --markdown /tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/inputs/report.md --metadata /tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/inputs/report-metadata.json --output /tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/A-installed-fonts/client/report.docx --body-font Liberation Serif --heading-font Liberation Sans
+[cwd] /home/claude/v2/skills/plan-ai-project-delivery/scripts
+[exit] 0
+
+--- stdout ---
+{"status": "BUILT_RENDER_AND_VISUAL_QA_REQUIRED", "docx": "report.docx", "sha256": "fa2b16b488820b0c47eeba5417aa8d2d5cf203b09714794f2a20146f5ea20f2a", "source_sha256": "a2ff36eb39675e0f241a848161273c28510d6cf37095a9f421b20c96baeb3bdb", "attachment_links": [], "heading_count": 5, "table_count": 3, "figures": [], "sections": 3, "body_font": "Liberation Serif", "heading_font": "Liberation Sans", "font_availability": "NOT_VALIDATED", "toc": "native_toc_h1_h2_requires_field_update", "layout": {"chapter_page_break": true, "cover_numbered": false, "front_matter_numbering": "lowerRoman", "body_start": 1, "footer_pt": 9}, "toc_heading_count": 5}
+
+--- stderr ---

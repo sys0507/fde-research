@@ -1,0 +1,821 @@
+{
+  "assumptions": [
+    {
+      "affects": "Scope, expenses, schedule, and payments",
+      "basis": "Teaching example",
+      "change_action": "Revise the model version and recalculate",
+      "id": "A1",
+      "reason": "Practice quotation and scheduling",
+      "statement": "The project and all amounts are teaching simulations, not an enterprise-approved budget",
+      "status": "preset",
+      "verify": "Client business, finance, and delivery owners confirm their respective areas before implementation",
+      "visibility": "client"
+    },
+    {
+      "affects": "Service quotation",
+      "basis": "Teaching example",
+      "change_action": "Update internal costs and recalculate without directly disclosing them to the client",
+      "id": "A2",
+      "reason": "Demonstrate internal cost derivation",
+      "statement": "Personnel costs and target margin are teaching assumptions only",
+      "status": "preset",
+      "verify": "Vendor finance confirms actual fully loaded costs",
+      "visibility": "internal"
+    }
+  ],
+  "estimation_profile": "ai_collaborative_v1",
+  "expenses": [
+    {
+      "amount": "800",
+      "basis": "Teaching estimate; actual resource quotation pending",
+      "category": "compute",
+      "id": "E1",
+      "payer": "vendor",
+      "period": "one_time",
+      "purpose": "development",
+      "task_ids": [],
+      "title": "Temporary development resources"
+    },
+    {
+      "amount": "20",
+      "api": {
+        "budget": "20",
+        "buffer_basis": "Reserve CNY 7.904 for approximately 39 additional normal requests per slice; not a percentage of service price.",
+        "lines": [
+          {
+            "kind": "Uncached input",
+            "model": "Example model A",
+            "price_per_million": "1.5",
+            "quantity_million_tokens": "5.76",
+            "token_type": "input"
+          },
+          {
+            "kind": "Output",
+            "model": "Example model A",
+            "price_per_million": "6",
+            "quantity_million_tokens": "0.576",
+            "token_type": "output"
+          }
+        ],
+        "model": "Example model A",
+        "price_date": "2026-09-23",
+        "request_groups": [
+          {
+            "agent_work_refs": [
+              "P2:A1"
+            ],
+            "context_components": [
+              {
+                "basis": "Illustrative average-volume assumption",
+                "description": "System instructions, interfaces, and task requirements",
+                "id": "instructions",
+                "tokens": 2000
+              },
+              {
+                "basis": "Slice-relevant file context, not the entire repository",
+                "description": "Relevant source code and tests",
+                "id": "code",
+                "tokens": 8000
+              },
+              {
+                "basis": "Average includes repeated context; re-estimate longer context",
+                "description": "Tool results and short-round history",
+                "id": "history",
+                "tokens": 2000
+              }
+            ],
+            "evidence": "Independent algorithm example without measured traces; output excludes separately charged reasoning, which must be added if the provider bills it separately",
+            "id": "G1",
+            "iteration_basis": "Eight slices times five rounds, 12 requests per round; calibrate against real calls and repairs during execution",
+            "model": "Example model A",
+            "output_tokens_per_request": 1200,
+            "phase": "Implementation, testing, normal repair, and regression",
+            "requests_per_run": 12,
+            "runs": 40
+          }
+        ],
+        "source": "Simulated teaching input; actual projects must use the supplier's official pricing source",
+        "usage_basis": "Eight slices, each with five rounds covering first implementation, test generation, normal repair, regression, and handoff; 12 requests per round with 12,000 input and 1,200 output tokens each; not measured.",
+        "usage_status": "estimated"
+      },
+      "basis": "Teaching unit-price assumption: estimated 12.096, budget 20; replace with official pricing and project traces for actual work.",
+      "category": "api",
+      "id": "E2",
+      "payer": "client",
+      "period": "one_time",
+      "purpose": "development",
+      "task_ids": [
+        "P2"
+      ],
+      "title": "Client development API budget"
+    },
+    {
+      "amount": "1000",
+      "basis": "Teaching placeholder; validate against actual production load",
+      "category": "compute",
+      "id": "E3",
+      "payer": "client",
+      "period": "month",
+      "purpose": "production",
+      "task_ids": [],
+      "title": "Estimated production resources"
+    },
+    {
+      "amount": null,
+      "basis": "Selection and quotation unknown; do not treat as zero",
+      "category": "equipment",
+      "id": "E4",
+      "payer": "client",
+      "period": "one_time",
+      "purpose": "production",
+      "task_ids": [],
+      "title": "Optional local equipment"
+    }
+  ],
+  "packages": [
+    {
+      "agent_hours": "4",
+      "agent_work": [
+        {
+          "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+          "id": "A1",
+          "output": "Shared authorization and retrieval delivery record",
+          "review_effort_ids": [
+            "H3"
+          ],
+          "reviewer": "fde",
+          "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+          "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+        }
+      ],
+      "allocations": [
+        {
+          "day": 1,
+          "hours": "8",
+          "person_id": "fde"
+        }
+      ],
+      "deliverable": "Shared authorization and retrieval delivery record",
+      "dependency_basis": [],
+      "depends_on": [],
+      "done_when": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation",
+      "end_day": 1,
+      "estimate_basis": "Estimate active preparation, decisions, review, and integration from human_effort; expert assumptions for an independent algorithm example, not measured benchmarks.",
+      "external_wait_days": "0",
+      "human_effort": [
+        {
+          "activity": "Inspect reusable retrieval and authorization configuration",
+          "basis": "Independent example assumes existing foundation services; inventory configuration and permission contracts",
+          "category": "prepare",
+          "id": "H1",
+          "person_id": "fde",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "2"
+        },
+        {
+          "activity": "Confirm two access boundaries",
+          "basis": "Review boundaries instead of rebuilding the account platform",
+          "category": "decide",
+          "id": "H2",
+          "person_id": "fde",
+          "quantity": "2",
+          "unit": "item",
+          "unit_hours": "1"
+        },
+        {
+          "activity": "Review agent configuration and test results",
+          "basis": "Two rounds, one active human hour each",
+          "category": "review",
+          "id": "H3",
+          "person_id": "fde",
+          "quantity": "2",
+          "unit": "item",
+          "unit_hours": "1"
+        },
+        {
+          "activity": "Connect in a controlled environment and spot-check",
+          "basis": "Limited integration and records",
+          "category": "integrate",
+          "id": "H4",
+          "person_id": "fde",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "2"
+        }
+      ],
+      "id": "P1",
+      "kind": "reuse",
+      "normal_rework_included": true,
+      "owner": "fde",
+      "requirement_ids": [
+        "R1"
+      ],
+      "shared_key": "shared-retrieval",
+      "start_day": 1,
+      "title": "Shared authorization and retrieval foundation"
+    },
+    {
+      "agent_hours": "4",
+      "agent_work": [
+        {
+          "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+          "id": "A1",
+          "output": "Business assistant development delivery record",
+          "review_effort_ids": [
+            "H3"
+          ],
+          "reviewer": "fde",
+          "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+          "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+        }
+      ],
+      "allocations": [
+        {
+          "day": 2,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 3,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 4,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 5,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 6,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 7,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 8,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 9,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 10,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 11,
+          "hours": "8",
+          "person_id": "fde"
+        }
+      ],
+      "deliverable": "Business assistant development delivery record",
+      "dependency_basis": [
+        {
+          "kind": "technical",
+          "predecessor_id": "P1",
+          "required_output": "Shared authorization and retrieval delivery record",
+          "why_blocks_start": "This package needs a usable foundation-service contract and connection result; split an early prerequisite slice if its contract can be delivered sooner."
+        }
+      ],
+      "depends_on": [
+        "P1"
+      ],
+      "done_when": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation",
+      "end_day": 11,
+      "estimate_basis": "Estimate active preparation, decisions, review, and integration from human_effort; expert assumptions for an independent algorithm example, not measured benchmarks.",
+      "external_wait_days": "0",
+      "human_effort": [
+        {
+          "activity": "Prepare interfaces, samples, and acceptance guidance for cross-layer slices",
+          "basis": "Eight delivery slices with existing prototype and shared services",
+          "category": "prepare",
+          "id": "H1",
+          "person_id": "fde",
+          "quantity": "8",
+          "unit": "item",
+          "unit_hours": "2"
+        },
+        {
+          "activity": "Confirm key decisions on tool permissions and data writes",
+          "basis": "One design judgment per slice",
+          "category": "decide",
+          "id": "H2",
+          "person_id": "fde",
+          "quantity": "8",
+          "unit": "item",
+          "unit_hours": "1"
+        },
+        {
+          "activity": "Review agent first implementation and normal repairs",
+          "basis": "First version plus one normal repair round per slice; two active human hours each",
+          "category": "review",
+          "id": "H3",
+          "person_id": "fde",
+          "quantity": "16",
+          "unit": "item",
+          "unit_hours": "2"
+        },
+        {
+          "activity": "Integrate in the actual environment and diagnose exceptions",
+          "basis": "Three hours per slice, excluding unattended execution",
+          "category": "integrate",
+          "id": "H4",
+          "person_id": "fde",
+          "quantity": "8",
+          "unit": "item",
+          "unit_hours": "3"
+        }
+      ],
+      "id": "P2",
+      "kind": "build",
+      "normal_rework_included": true,
+      "owner": "fde",
+      "requirement_ids": [
+        "R2"
+      ],
+      "start_day": 2,
+      "title": "Business assistant development",
+      "uses_shared": [
+        "P1"
+      ]
+    },
+    {
+      "agent_hours": "4",
+      "agent_work": [
+        {
+          "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+          "id": "A1",
+          "output": "Business configuration and feedback delivery record",
+          "review_effort_ids": [
+            "H2"
+          ],
+          "reviewer": "fde",
+          "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+          "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+        }
+      ],
+      "allocations": [
+        {
+          "day": 12,
+          "hours": "8",
+          "person_id": "fde"
+        },
+        {
+          "day": 13,
+          "hours": "8",
+          "person_id": "fde"
+        }
+      ],
+      "deliverable": "Business configuration and feedback delivery record",
+      "dependency_basis": [
+        {
+          "kind": "technical",
+          "predecessor_id": "P2",
+          "required_output": "Business assistant development delivery record",
+          "why_blocks_start": "This package only changes configuration of usable functions and therefore requires their first version."
+        }
+      ],
+      "depends_on": [
+        "P2"
+      ],
+      "done_when": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation",
+      "end_day": 13,
+      "estimate_basis": "Estimate active preparation, decisions, review, and integration from human_effort; expert assumptions for an independent algorithm example, not measured benchmarks.",
+      "external_wait_days": "0",
+      "human_effort": [
+        {
+          "activity": "Organize business configuration feedback",
+          "basis": "Parameter feedback for four existing function types",
+          "category": "prepare",
+          "id": "H1",
+          "person_id": "fde",
+          "quantity": "4",
+          "unit": "item",
+          "unit_hours": "1"
+        },
+        {
+          "activity": "Review agent configuration updates",
+          "basis": "One hour per type",
+          "category": "review",
+          "id": "H2",
+          "person_id": "fde",
+          "quantity": "4",
+          "unit": "item",
+          "unit_hours": "1"
+        },
+        {
+          "activity": "Integrate configuration and demonstrate to users",
+          "basis": "Two hours per type including records",
+          "category": "integrate",
+          "id": "H3",
+          "person_id": "fde",
+          "quantity": "4",
+          "unit": "item",
+          "unit_hours": "2"
+        }
+      ],
+      "id": "P3",
+      "kind": "configure",
+      "normal_rework_included": true,
+      "owner": "fde",
+      "requirement_ids": [
+        "R2"
+      ],
+      "start_day": 12,
+      "title": "Business configuration and feedback revisions",
+      "uses_shared": [
+        "P1"
+      ]
+    },
+    {
+      "agent_hours": "4",
+      "agent_work": [
+        {
+          "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+          "id": "A1",
+          "output": "Functional and regression test delivery record",
+          "review_effort_ids": [
+            "H3"
+          ],
+          "reviewer": "qa",
+          "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+          "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+        }
+      ],
+      "allocations": [
+        {
+          "day": 12,
+          "hours": "8",
+          "person_id": "qa"
+        },
+        {
+          "day": 13,
+          "hours": "8",
+          "person_id": "qa"
+        },
+        {
+          "day": 14,
+          "hours": "8",
+          "person_id": "qa"
+        }
+      ],
+      "deliverable": "Functional and regression test delivery record",
+      "dependency_basis": [
+        {
+          "kind": "technical",
+          "predecessor_id": "P2",
+          "required_output": "Business assistant development delivery record",
+          "why_blocks_start": "This verifies the integrated first version; split test design into an independent prerequisite-free package if it can start earlier."
+        }
+      ],
+      "depends_on": [
+        "P2"
+      ],
+      "done_when": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation",
+      "end_day": 14,
+      "estimate_basis": "Estimate active preparation, decisions, review, and integration from human_effort; expert assumptions for an independent algorithm example, not measured benchmarks.",
+      "external_wait_days": "0",
+      "human_effort": [
+        {
+          "activity": "Define reference outcomes and high-risk tags for 40 regression cases",
+          "basis": "Example assumes business materials already support the reference outcomes",
+          "category": "prepare",
+          "id": "H1",
+          "person_id": "qa",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "4"
+        },
+        {
+          "activity": "Manually review 10 high-risk results",
+          "basis": "Other cases run in batches with deterministic assertions, not separate manual retests",
+          "category": "verify",
+          "id": "H2",
+          "person_id": "qa",
+          "quantity": "10",
+          "unit": "case",
+          "unit_hours": "0.2"
+        },
+        {
+          "activity": "Review diagnosis and reruns for an expected six failures",
+          "basis": "Failure rate is a planning assumption; replace it with actual counts after execution",
+          "category": "review",
+          "id": "H3",
+          "person_id": "qa",
+          "quantity": "6",
+          "unit": "case",
+          "unit_hours": "0.25"
+        },
+        {
+          "activity": "Confirm regression conclusions",
+          "basis": "Four activities total eight hours; automated execution is separate",
+          "category": "decide",
+          "id": "H4",
+          "person_id": "qa",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "0.5"
+        },
+        {
+          "activity": "Verify real permissions and exception recovery",
+          "basis": "Four high-impact conditions, three hours each",
+          "category": "verify",
+          "id": "H5",
+          "person_id": "qa",
+          "quantity": "4",
+          "unit": "item",
+          "unit_hours": "3"
+        },
+        {
+          "activity": "Organize business trial and issue handback",
+          "basis": "Authorized business roles participate; QA organizes records",
+          "category": "integrate",
+          "id": "H6",
+          "person_id": "qa",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "4"
+        }
+      ],
+      "id": "P4",
+      "kind": "test",
+      "normal_rework_included": true,
+      "owner": "qa",
+      "requirement_ids": [
+        "R3"
+      ],
+      "start_day": 12,
+      "title": "Functional and regression testing"
+    },
+    {
+      "agent_hours": "4",
+      "agent_work": [
+        {
+          "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+          "id": "A1",
+          "output": "Risk treatment delivery record",
+          "review_effort_ids": [
+            "H2"
+          ],
+          "reviewer": "fde",
+          "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+          "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+        }
+      ],
+      "allocations": [
+        {
+          "day": 15,
+          "hours": "8",
+          "person_id": "fde"
+        }
+      ],
+      "deliverable": "Risk treatment delivery record",
+      "dependency_basis": [
+        {
+          "kind": "acceptance",
+          "predecessor_id": "P4",
+          "required_output": "Functional and regression test delivery record",
+          "why_blocks_start": "The target-environment risk record found during testing is input to this treatment."
+        }
+      ],
+      "depends_on": [
+        "P4"
+      ],
+      "done_when": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation",
+      "end_day": 15,
+      "estimate_basis": "Estimate active preparation, decisions, review, and integration from human_effort; expert assumptions for an independent algorithm example, not measured benchmarks.",
+      "external_wait_days": "0",
+      "human_effort": [
+        {
+          "activity": "Diagnose certificate or proxy differences",
+          "basis": "Explicit upper bound if the environment risk occurs",
+          "category": "prepare",
+          "id": "H1",
+          "person_id": "fde",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "2"
+        },
+        {
+          "activity": "Review agent adaptation changes",
+          "basis": "Environment adaptation only",
+          "category": "review",
+          "id": "H2",
+          "person_id": "fde",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "2"
+        },
+        {
+          "activity": "Retest the target environment and check rollback",
+          "basis": "Risk contingency; consumption is not guaranteed",
+          "category": "integrate",
+          "id": "H3",
+          "person_id": "fde",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "4"
+        }
+      ],
+      "id": "P5",
+      "kind": "risk",
+      "normal_rework_included": true,
+      "owner": "fde",
+      "requirement_ids": [
+        "R3"
+      ],
+      "risk_reason": "Allow for diagnosis and repair of additional acceptance-environment compatibility issues, distinct from normal rework already included in P3",
+      "start_day": 15,
+      "title": "Risk treatment allowance"
+    },
+    {
+      "agent_hours": "4",
+      "agent_work": [
+        {
+          "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+          "id": "A1",
+          "output": "Deployment and handoff delivery record",
+          "review_effort_ids": [
+            "H2"
+          ],
+          "reviewer": "ops",
+          "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+          "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+        }
+      ],
+      "allocations": [
+        {
+          "day": 15,
+          "hours": "8",
+          "person_id": "ops"
+        }
+      ],
+      "deliverable": "Deployment and handoff delivery record",
+      "dependency_basis": [
+        {
+          "kind": "acceptance",
+          "predecessor_id": "P3",
+          "required_output": "Business configuration and feedback delivery record",
+          "why_blocks_start": "Formal deployment requires configuration review and integrated verification to pass; split deployment-script preparation earlier when possible."
+        },
+        {
+          "kind": "acceptance",
+          "predecessor_id": "P4",
+          "required_output": "Functional and regression test delivery record",
+          "why_blocks_start": "Formal deployment requires configuration review and integrated verification to pass; split deployment-script preparation earlier when possible."
+        }
+      ],
+      "depends_on": [
+        "P3",
+        "P4"
+      ],
+      "done_when": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation",
+      "end_day": 15,
+      "estimate_basis": "Estimate active preparation, decisions, review, and integration from human_effort; expert assumptions for an independent algorithm example, not measured benchmarks.",
+      "external_wait_days": "0",
+      "human_effort": [
+        {
+          "activity": "Confirm deployment window and rollback conditions",
+          "basis": "Operations authorization and resources ready",
+          "category": "prepare",
+          "id": "H1",
+          "person_id": "ops",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "2"
+        },
+        {
+          "activity": "Review deployment scripts and execution results",
+          "basis": "Agent runs controlled scripts; a person verifies",
+          "category": "review",
+          "id": "H2",
+          "person_id": "ops",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "2"
+        },
+        {
+          "activity": "Verify release and record handoff",
+          "basis": "Includes checking recovery steps",
+          "category": "integrate",
+          "id": "H3",
+          "person_id": "ops",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "4"
+        }
+      ],
+      "id": "P6",
+      "kind": "deploy",
+      "normal_rework_included": true,
+      "owner": "ops",
+      "requirement_ids": [
+        "R3"
+      ],
+      "start_day": 15,
+      "title": "Deployment and handoff"
+    }
+  ],
+  "people": [
+    {
+      "available_from": 1,
+      "available_to": 15,
+      "capacity_hours_per_day": "8",
+      "hourly_cost": "200",
+      "id": "fde",
+      "overrides": {},
+      "payer": "vendor",
+      "role": "FDE engineer"
+    },
+    {
+      "available_from": 1,
+      "available_to": 15,
+      "capacity_hours_per_day": "8",
+      "hourly_cost": "125",
+      "id": "qa",
+      "overrides": {},
+      "payer": "vendor",
+      "role": "QA engineer"
+    },
+    {
+      "available_from": 1,
+      "available_to": 15,
+      "capacity_hours_per_day": "8",
+      "hourly_cost": "175",
+      "id": "ops",
+      "overrides": {},
+      "payer": "vendor",
+      "role": "Operations engineer"
+    }
+  ],
+  "pricing": {
+    "method": "gross_margin",
+    "payment_basis": "ex_tax",
+    "payment_terms_status": "Teaching proposal; commercial confirmation pending",
+    "payments": [
+      {
+        "id": "M1",
+        "milestone": "Startup and scope confirmation",
+        "ratio": "0.3"
+      },
+      {
+        "id": "M2",
+        "milestone": "Core capabilities complete",
+        "ratio": "0.4"
+      },
+      {
+        "id": "M3",
+        "milestone": "Acceptance and handoff",
+        "ratio": "0.3"
+      }
+    ],
+    "rate": "0.25",
+    "tax_note": "Finance must confirm tax and invoicing; current quotation excludes tax",
+    "tax_rate": null,
+    "validity": "Illustrative 30-day validity; confirm for a formal quote"
+  },
+  "project": {
+    "change_reason": "Initial teaching calculation example",
+    "currency": "CNY",
+    "date": "2026-09-23",
+    "hours_per_day": "8",
+    "name": "Teaching example: AI business assistant delivery",
+    "status": "Teaching assumption; pending confirmation",
+    "version": "v1"
+  },
+  "requirements": [
+    {
+      "basis": "Teaching assumption; requirements owner to confirm",
+      "disposition": "included",
+      "id": "R1",
+      "title": "Shared authorization and retrieval foundation"
+    },
+    {
+      "basis": "Teaching assumption; requirements owner to confirm",
+      "disposition": "included",
+      "id": "R2",
+      "title": "Business assistant development and configuration"
+    },
+    {
+      "basis": "Teaching assumption; requirements owner to confirm",
+      "disposition": "included",
+      "id": "R3",
+      "title": "Acceptance testing, deployment, and handoff"
+    }
+  ],
+  "schema_version": 1
+}

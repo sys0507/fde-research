@@ -1,0 +1,270 @@
+{
+  "purpose": "Toolchain spot check with synthetic reports; not customer layout acceptance.",
+  "environment": {
+    "os": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "libreoffice": "LibreOffice 24.2.7.2 420(Build:2)",
+    "soffice": "/usr/bin/soffice",
+    "python-docx": "1.2.0",
+    "Pillow": "12.3.0",
+    "lxml": "6.1.3",
+    "pypdf": "5.9.0",
+    "pdfplumber": "0.11.10",
+    "pypdfium2": "present"
+  },
+  "editions": {
+    "en": {
+      "package_root_name": "skills",
+      "version": "2.2.1-en.1",
+      "package_manifest_sha256": "2052e712865a377d9f335e54df92996a5176d2d3ab724d44a1de61f882959c3d",
+      "package_files_hashed": 123,
+      "excluded_from_manifest": [
+        "docs/validation.md"
+      ],
+      "estimate_exit": 0,
+      "cases": [
+        {
+          "case": "A-installed-fonts",
+          "body_font": "Liberation Serif",
+          "heading_font": "Liberation Sans",
+          "substitutions": [],
+          "finalize_exit": 0,
+          "pdf_font_status": "MATCHED",
+          "expected_status": "MATCHED",
+          "as_expected": true,
+          "used_families": [
+            "liberationsans",
+            "liberationserif"
+          ],
+          "pages": 6,
+          "passes": [
+            {
+              "iteration": 1,
+              "docx_sha256": "ee37abca2a571a65edbe52423ca34afc035f30d409a571afa229e1a238cf9408",
+              "page_count": 6,
+              "page_map": {
+                "chapter_1": 1,
+                "chapter_2": 1,
+                "chapter_3": 2,
+                "chapter_4": 2,
+                "chapter_5": 3
+              },
+              "physical_page_map": {
+                "chapter_1": 4,
+                "chapter_2": 4,
+                "chapter_3": 5,
+                "chapter_4": 5,
+                "chapter_5": 6
+              }
+            },
+            {
+              "iteration": 2,
+              "docx_sha256": "2b4b6411c239a1c2932284d785b0ee19c4c405a1d543961817119240bb0f6662",
+              "page_count": 6,
+              "page_map": {
+                "chapter_1": 1,
+                "chapter_2": 1,
+                "chapter_3": 2,
+                "chapter_4": 2,
+                "chapter_5": 3
+              },
+              "physical_page_map": {
+                "chapter_1": 4,
+                "chapter_2": 4,
+                "chapter_3": 5,
+                "chapter_4": 5,
+                "chapter_5": 6
+              }
+            }
+          ],
+          "pass_count": 2
+        },
+        {
+          "case": "B-accepted-substitution",
+          "body_font": "Times New Roman",
+          "heading_font": "Arial",
+          "substitutions": [
+            "Times New Roman=Liberation Serif",
+            "Arial=Liberation Sans"
+          ],
+          "finalize_exit": 0,
+          "pdf_font_status": "SUBSTITUTION_ACCEPTED",
+          "expected_status": "SUBSTITUTION_ACCEPTED",
+          "as_expected": true,
+          "used_families": [
+            "liberationsans",
+            "liberationserif"
+          ],
+          "pages": 6,
+          "passes": [
+            {
+              "iteration": 1,
+              "docx_sha256": "0e9e9ec8441567b0a8b55df317eca677a3f9b9eb8f735f4a89905523f64c0b81",
+              "page_count": 6,
+              "page_map": {
+                "chapter_1": 1,
+                "chapter_2": 1,
+                "chapter_3": 2,
+                "chapter_4": 2,
+                "chapter_5": 3
+              },
+              "physical_page_map": {
+                "chapter_1": 4,
+                "chapter_2": 4,
+                "chapter_3": 5,
+                "chapter_4": 5,
+                "chapter_5": 6
+              }
+            },
+            {
+              "iteration": 2,
+              "docx_sha256": "083c3860d76ab9629bdf0ff2dd1b384f2f576ccfbce84652a8c2e9c473f62245",
+              "page_count": 6,
+              "page_map": {
+                "chapter_1": 1,
+                "chapter_2": 1,
+                "chapter_3": 2,
+                "chapter_4": 2,
+                "chapter_5": 3
+              },
+              "physical_page_map": {
+                "chapter_1": 4,
+                "chapter_2": 4,
+                "chapter_3": 5,
+                "chapter_4": 5,
+                "chapter_5": 6
+              }
+            }
+          ],
+          "pass_count": 2
+        }
+      ],
+      "steps": [
+        {
+          "cmd": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/claude/v2/skills/plan-ai-project-delivery/scripts/estimate.py",
+            "run",
+            "--model",
+            "/home/claude/v2/skills/plan-ai-project-delivery/assets/example-model.json",
+            "--output",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/estimate/example-model"
+          ],
+          "cwd": "/home/claude/v2/skills/plan-ai-project-delivery/scripts",
+          "exit": 0,
+          "seconds": 0.06,
+          "log": "en/logs/estimate.log"
+        },
+        {
+          "cmd": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/claude/v2/skills/plan-ai-project-delivery/scripts/build_report.py",
+            "--markdown",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/inputs/report.md",
+            "--metadata",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/inputs/report-metadata.json",
+            "--output",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/A-installed-fonts/client/report.docx",
+            "--body-font",
+            "Liberation Serif",
+            "--heading-font",
+            "Liberation Sans"
+          ],
+          "cwd": "/home/claude/v2/skills/plan-ai-project-delivery/scripts",
+          "exit": 0,
+          "seconds": 0.23,
+          "log": "en/logs/A-installed-fonts-build.log"
+        },
+        {
+          "cmd": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/claude/v2/skills/plan-ai-project-delivery/scripts/finalize_word.py",
+            "--renderer-mode",
+            "generic",
+            "--docx",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/A-installed-fonts/client/report.docx",
+            "--output-dir",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/A-installed-fonts/qa",
+            "--renderer",
+            "/home/claude/v2/skills/plan-ai-project-delivery/scripts/render_word_generic.py",
+            "--soffice",
+            "/usr/bin/soffice"
+          ],
+          "cwd": "/home/claude/v2/skills/plan-ai-project-delivery/scripts",
+          "exit": 0,
+          "seconds": 3.94,
+          "log": "en/logs/A-installed-fonts-finalize.log"
+        },
+        {
+          "cmd": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/claude/v2/skills/plan-ai-project-delivery/scripts/build_report.py",
+            "--markdown",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/inputs/report.md",
+            "--metadata",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/inputs/report-metadata.json",
+            "--output",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/B-accepted-substitution/client/report.docx",
+            "--body-font",
+            "Times New Roman",
+            "--heading-font",
+            "Arial"
+          ],
+          "cwd": "/home/claude/v2/skills/plan-ai-project-delivery/scripts",
+          "exit": 0,
+          "seconds": 0.26,
+          "log": "en/logs/B-accepted-substitution-build.log"
+        },
+        {
+          "cmd": [
+            "/usr/bin/python3",
+            "-B",
+            "/home/claude/v2/skills/plan-ai-project-delivery/scripts/finalize_word.py",
+            "--renderer-mode",
+            "generic",
+            "--docx",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/B-accepted-substitution/client/report.docx",
+            "--output-dir",
+            "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/B-accepted-substitution/qa",
+            "--renderer",
+            "/home/claude/v2/skills/plan-ai-project-delivery/scripts/render_word_generic.py",
+            "--soffice",
+            "/usr/bin/soffice",
+            "--font-substitute",
+            "Times New Roman=Liberation Serif",
+            "--font-substitute",
+            "Arial=Liberation Sans"
+          ],
+          "cwd": "/home/claude/v2/skills/plan-ai-project-delivery/scripts",
+          "exit": 0,
+          "seconds": 3.81,
+          "log": "en/logs/B-accepted-substitution-finalize.log"
+        }
+      ]
+    }
+  },
+  "summary_corrections": [
+    {
+      "date": "2026-10-08",
+      "issue": "Original run_evidence.py read word-finalization.json key 'pages', which does not exist; the record uses 'page_count'. pages was therefore null for every case.",
+      "fix": "pages and pass_count filled from each case's qa/word-finalization.json (page_count, len(passes)); no re-render, no rendered artifact changed. run_evidence.py in this folder has the same key fixed for future runs; the original run used the pre-fix version.",
+      "cases_updated": [
+        "cn/B-installed-fonts: pages 6, passes 2",
+        "cn/D-substitute-from-used-fonts: pages 6, passes 2",
+        "en/A-installed-fonts: pages 6, passes 2",
+        "en/B-accepted-substitution: pages 6, passes 2"
+      ],
+      "cases_without_record": "Cases stopped by a font MISMATCH have no word-finalization.json; their pages stay null."
+    }
+  ],
+  "publication_extract": {
+    "edition": "en",
+    "date": "2026-10-09",
+    "source_summary_sha256": "3e9e30fe9d48b8099b6dd4a1b2892246158911e32d379ffd747e826e47d43202",
+    "note": "Edition-only extract. Raw reports and logs are unchanged historical artifacts; this is not a new render."
+  }
+}

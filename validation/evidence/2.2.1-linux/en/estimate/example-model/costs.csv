@@ -1,0 +1,5 @@
+﻿id,title,payer,period,category,purpose,amount,included_in_service
+E1,Temporary development resources,vendor,one_time,compute,development,800.00,True
+E2,Client development API budget,client,one_time,api,development,20.00,False
+E3,Estimated production resources,client,month,compute,production,1000.00,False
+E4,Optional local equipment,client,one_time,equipment,production,,False

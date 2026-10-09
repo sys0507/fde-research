@@ -1,0 +1,20 @@
+{
+  "status": "AVAILABLE",
+  "expected": [
+    "Liberation Serif",
+    "Liberation Sans"
+  ],
+  "matches": {
+    "Liberation Serif": [
+      "liberationserif"
+    ],
+    "Liberation Sans": [
+      "liberationsans"
+    ]
+  },
+  "sources": [
+    "fontconfig fc-list"
+  ],
+  "notes": [],
+  "scope": "Local font registration only; renderer discovery and actual PDF still require verification."
+}

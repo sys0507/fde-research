@@ -1,0 +1,4 @@
+interface:
+  display_name: "Business scenario design"
+  short_description: "Create before/after scenarios and interface simulations"
+  default_prompt: "Use $fde-ai-scenario-design. Develop complete business scenarios and simulated screens."

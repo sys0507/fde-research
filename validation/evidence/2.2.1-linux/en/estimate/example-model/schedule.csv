@@ -1,0 +1,7 @@
+﻿id,title,owner,start_day,end_day,person_hours,agent_hours,external_wait_days,deliverable,depends_on
+P1,Shared authorization and retrieval foundation,fde,1,1,8,4,0,Shared authorization and retrieval delivery record,[]
+P2,Business assistant development,fde,2,11,80,4,0,Business assistant development delivery record,['P1']
+P3,Business configuration and feedback revisions,fde,12,13,16,4,0,Business configuration and feedback delivery record,['P2']
+P4,Functional and regression testing,qa,12,14,24,4,0,Functional and regression test delivery record,['P2']
+P5,Risk treatment allowance,fde,15,15,8,4,0,Risk treatment delivery record,['P4']
+P6,Deployment and handoff,ops,15,15,8,4,0,Deployment and handoff delivery record,"['P3', 'P4']"

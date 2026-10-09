@@ -1,0 +1,889 @@
+{
+  "actual_gross_margin": "0.25",
+  "agent_work_details": [
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Shared authorization and retrieval delivery record",
+      "package_id": "P1",
+      "review_effort_ids": [
+        "H3"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Business assistant development delivery record",
+      "package_id": "P2",
+      "review_effort_ids": [
+        "H3"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Business configuration and feedback delivery record",
+      "package_id": "P3",
+      "review_effort_ids": [
+        "H2"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Functional and regression test delivery record",
+      "package_id": "P4",
+      "review_effort_ids": [
+        "H3"
+      ],
+      "reviewer": "qa",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Risk treatment delivery record",
+      "package_id": "P5",
+      "review_effort_ids": [
+        "H2"
+      ],
+      "reviewer": "fde",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    },
+    {
+      "activity": "Implement or configure from confirmed inputs, generate and run automated checks, and fix findings",
+      "id": "A1",
+      "output": "Deployment and handoff delivery record",
+      "package_id": "P6",
+      "review_effort_ids": [
+        "H2"
+      ],
+      "reviewer": "ops",
+      "runtime_basis": "Example assumes a 4-hour execution window, separate from people and tokens; calibrate from traces",
+      "verification": "Confirm the corresponding requirement acceptance record; this is a teaching assumption requiring client confirmation before implementation"
+    }
+  ],
+  "api_estimates": [
+    {
+      "budget": "20.00",
+      "buffer": "7.90",
+      "expense_id": "E2",
+      "usage_estimate": "12.10"
+    }
+  ],
+  "api_request_groups": [
+    {
+      "agent_work_refs": [
+        "P2:A1"
+      ],
+      "context_components": [
+        {
+          "basis": "Illustrative average-volume assumption",
+          "description": "System instructions, interfaces, and task requirements",
+          "id": "instructions",
+          "tokens": 2000
+        },
+        {
+          "basis": "Slice-relevant file context, not the entire repository",
+          "description": "Relevant source code and tests",
+          "id": "code",
+          "tokens": 8000
+        },
+        {
+          "basis": "Average includes repeated context; re-estimate longer context",
+          "description": "Tool results and short-round history",
+          "id": "history",
+          "tokens": 2000
+        }
+      ],
+      "evidence": "Independent algorithm example without measured traces; output excludes separately charged reasoning, which must be added if the provider bills it separately",
+      "expense_id": "E2",
+      "id": "G1",
+      "iteration_basis": "Eight slices times five rounds, 12 requests per round; calibrate against real calls and repairs during execution",
+      "model": "Example model A",
+      "output_tokens_per_request": 1200,
+      "phase": "Implementation, testing, normal repair, and regression",
+      "requests_per_run": 12,
+      "runs": 40
+    }
+  ],
+  "api_usage_details": [
+    {
+      "expense_id": "E2",
+      "lines": [
+        {
+          "kind": "Uncached input",
+          "model": "Example model A",
+          "price_per_million": "1.5",
+          "quantity_million_tokens": "5.76",
+          "token_type": "input"
+        },
+        {
+          "kind": "Output",
+          "model": "Example model A",
+          "price_per_million": "6",
+          "quantity_million_tokens": "0.576",
+          "token_type": "output"
+        }
+      ],
+      "model": "Example model A",
+      "payer": "client",
+      "price_date": "2026-09-23",
+      "purpose": "development",
+      "source": "Simulated teaching input; actual projects must use the supplier's official pricing source",
+      "usage_basis": "Eight slices, each with five rounds covering first implementation, test generation, normal repair, regression, and handoff; 12 requests per round with 12,000 input and 1,200 output tokens each; not measured.",
+      "usage_status": "estimated"
+    }
+  ],
+  "client_development_api_budget": "20.00",
+  "client_incremental_known": "36820.00",
+  "client_one_time_known": "20.00",
+  "costs": [
+    {
+      "amount": "800.00",
+      "category": "compute",
+      "id": "E1",
+      "included_in_service": true,
+      "payer": "vendor",
+      "period": "one_time",
+      "purpose": "development",
+      "title": "Temporary development resources"
+    },
+    {
+      "amount": "20.00",
+      "category": "api",
+      "id": "E2",
+      "included_in_service": false,
+      "payer": "client",
+      "period": "one_time",
+      "purpose": "development",
+      "title": "Client development API budget"
+    },
+    {
+      "amount": "1000.00",
+      "category": "compute",
+      "id": "E3",
+      "included_in_service": false,
+      "payer": "client",
+      "period": "month",
+      "purpose": "production",
+      "title": "Estimated production resources"
+    },
+    {
+      "amount": null,
+      "category": "equipment",
+      "id": "E4",
+      "included_in_service": false,
+      "payer": "client",
+      "period": "one_time",
+      "purpose": "production",
+      "title": "Optional local equipment"
+    }
+  ],
+  "dependency_evidence": [
+    {
+      "kind": "technical",
+      "package_id": "P2",
+      "predecessor_id": "P1",
+      "required_output": "Shared authorization and retrieval delivery record",
+      "why_blocks_start": "This package needs a usable foundation-service contract and connection result; split an early prerequisite slice if its contract can be delivered sooner."
+    },
+    {
+      "kind": "technical",
+      "package_id": "P3",
+      "predecessor_id": "P2",
+      "required_output": "Business assistant development delivery record",
+      "why_blocks_start": "This package only changes configuration of usable functions and therefore requires their first version."
+    },
+    {
+      "kind": "technical",
+      "package_id": "P4",
+      "predecessor_id": "P2",
+      "required_output": "Business assistant development delivery record",
+      "why_blocks_start": "This verifies the integrated first version; split test design into an independent prerequisite-free package if it can start earlier."
+    },
+    {
+      "kind": "acceptance",
+      "package_id": "P5",
+      "predecessor_id": "P4",
+      "required_output": "Functional and regression test delivery record",
+      "why_blocks_start": "The target-environment risk record found during testing is input to this treatment."
+    },
+    {
+      "kind": "acceptance",
+      "package_id": "P6",
+      "predecessor_id": "P3",
+      "required_output": "Business configuration and feedback delivery record",
+      "why_blocks_start": "Formal deployment requires configuration review and integrated verification to pass; split deployment-script preparation earlier when possible."
+    },
+    {
+      "kind": "acceptance",
+      "package_id": "P6",
+      "predecessor_id": "P4",
+      "required_output": "Functional and regression test delivery record",
+      "why_blocks_start": "Formal deployment requires configuration review and integrated verification to pass; split deployment-script preparation earlier when possible."
+    }
+  ],
+  "duration_days": 15,
+  "effort_details": [
+    {
+      "activity": "Inspect reusable retrieval and authorization configuration",
+      "basis": "Independent example assumes existing foundation services; inventory configuration and permission contracts",
+      "category": "prepare",
+      "hours": "2",
+      "id": "H1",
+      "package_id": "P1",
+      "person_id": "fde",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Confirm two access boundaries",
+      "basis": "Review boundaries instead of rebuilding the account platform",
+      "category": "decide",
+      "hours": "2",
+      "id": "H2",
+      "package_id": "P1",
+      "person_id": "fde",
+      "quantity": "2",
+      "unit": "item",
+      "unit_hours": "1"
+    },
+    {
+      "activity": "Review agent configuration and test results",
+      "basis": "Two rounds, one active human hour each",
+      "category": "review",
+      "hours": "2",
+      "id": "H3",
+      "package_id": "P1",
+      "person_id": "fde",
+      "quantity": "2",
+      "unit": "item",
+      "unit_hours": "1"
+    },
+    {
+      "activity": "Connect in a controlled environment and spot-check",
+      "basis": "Limited integration and records",
+      "category": "integrate",
+      "hours": "2",
+      "id": "H4",
+      "package_id": "P1",
+      "person_id": "fde",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Prepare interfaces, samples, and acceptance guidance for cross-layer slices",
+      "basis": "Eight delivery slices with existing prototype and shared services",
+      "category": "prepare",
+      "hours": "16",
+      "id": "H1",
+      "package_id": "P2",
+      "person_id": "fde",
+      "quantity": "8",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Confirm key decisions on tool permissions and data writes",
+      "basis": "One design judgment per slice",
+      "category": "decide",
+      "hours": "8",
+      "id": "H2",
+      "package_id": "P2",
+      "person_id": "fde",
+      "quantity": "8",
+      "unit": "item",
+      "unit_hours": "1"
+    },
+    {
+      "activity": "Review agent first implementation and normal repairs",
+      "basis": "First version plus one normal repair round per slice; two active human hours each",
+      "category": "review",
+      "hours": "32",
+      "id": "H3",
+      "package_id": "P2",
+      "person_id": "fde",
+      "quantity": "16",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Integrate in the actual environment and diagnose exceptions",
+      "basis": "Three hours per slice, excluding unattended execution",
+      "category": "integrate",
+      "hours": "24",
+      "id": "H4",
+      "package_id": "P2",
+      "person_id": "fde",
+      "quantity": "8",
+      "unit": "item",
+      "unit_hours": "3"
+    },
+    {
+      "activity": "Organize business configuration feedback",
+      "basis": "Parameter feedback for four existing function types",
+      "category": "prepare",
+      "hours": "4",
+      "id": "H1",
+      "package_id": "P3",
+      "person_id": "fde",
+      "quantity": "4",
+      "unit": "item",
+      "unit_hours": "1"
+    },
+    {
+      "activity": "Review agent configuration updates",
+      "basis": "One hour per type",
+      "category": "review",
+      "hours": "4",
+      "id": "H2",
+      "package_id": "P3",
+      "person_id": "fde",
+      "quantity": "4",
+      "unit": "item",
+      "unit_hours": "1"
+    },
+    {
+      "activity": "Integrate configuration and demonstrate to users",
+      "basis": "Two hours per type including records",
+      "category": "integrate",
+      "hours": "8",
+      "id": "H3",
+      "package_id": "P3",
+      "person_id": "fde",
+      "quantity": "4",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Define reference outcomes and high-risk tags for 40 regression cases",
+      "basis": "Example assumes business materials already support the reference outcomes",
+      "category": "prepare",
+      "hours": "4",
+      "id": "H1",
+      "package_id": "P4",
+      "person_id": "qa",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "4"
+    },
+    {
+      "activity": "Manually review 10 high-risk results",
+      "basis": "Other cases run in batches with deterministic assertions, not separate manual retests",
+      "category": "verify",
+      "hours": "2.0",
+      "id": "H2",
+      "package_id": "P4",
+      "person_id": "qa",
+      "quantity": "10",
+      "unit": "case",
+      "unit_hours": "0.2"
+    },
+    {
+      "activity": "Review diagnosis and reruns for an expected six failures",
+      "basis": "Failure rate is a planning assumption; replace it with actual counts after execution",
+      "category": "review",
+      "hours": "1.50",
+      "id": "H3",
+      "package_id": "P4",
+      "person_id": "qa",
+      "quantity": "6",
+      "unit": "case",
+      "unit_hours": "0.25"
+    },
+    {
+      "activity": "Confirm regression conclusions",
+      "basis": "Four activities total eight hours; automated execution is separate",
+      "category": "decide",
+      "hours": "0.5",
+      "id": "H4",
+      "package_id": "P4",
+      "person_id": "qa",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "0.5"
+    },
+    {
+      "activity": "Verify real permissions and exception recovery",
+      "basis": "Four high-impact conditions, three hours each",
+      "category": "verify",
+      "hours": "12",
+      "id": "H5",
+      "package_id": "P4",
+      "person_id": "qa",
+      "quantity": "4",
+      "unit": "item",
+      "unit_hours": "3"
+    },
+    {
+      "activity": "Organize business trial and issue handback",
+      "basis": "Authorized business roles participate; QA organizes records",
+      "category": "integrate",
+      "hours": "4",
+      "id": "H6",
+      "package_id": "P4",
+      "person_id": "qa",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "4"
+    },
+    {
+      "activity": "Diagnose certificate or proxy differences",
+      "basis": "Explicit upper bound if the environment risk occurs",
+      "category": "prepare",
+      "hours": "2",
+      "id": "H1",
+      "package_id": "P5",
+      "person_id": "fde",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Review agent adaptation changes",
+      "basis": "Environment adaptation only",
+      "category": "review",
+      "hours": "2",
+      "id": "H2",
+      "package_id": "P5",
+      "person_id": "fde",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Retest the target environment and check rollback",
+      "basis": "Risk contingency; consumption is not guaranteed",
+      "category": "integrate",
+      "hours": "4",
+      "id": "H3",
+      "package_id": "P5",
+      "person_id": "fde",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "4"
+    },
+    {
+      "activity": "Confirm deployment window and rollback conditions",
+      "basis": "Operations authorization and resources ready",
+      "category": "prepare",
+      "hours": "2",
+      "id": "H1",
+      "package_id": "P6",
+      "person_id": "ops",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Review deployment scripts and execution results",
+      "basis": "Agent runs controlled scripts; a person verifies",
+      "category": "review",
+      "hours": "2",
+      "id": "H2",
+      "package_id": "P6",
+      "person_id": "ops",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "2"
+    },
+    {
+      "activity": "Verify release and record handoff",
+      "basis": "Includes checking recovery steps",
+      "category": "integrate",
+      "hours": "4",
+      "id": "H3",
+      "package_id": "P6",
+      "person_id": "ops",
+      "quantity": "1",
+      "unit": "item",
+      "unit_hours": "4"
+    }
+  ],
+  "equipment": [
+    {
+      "amount": null,
+      "category": "equipment",
+      "id": "E4",
+      "included_in_service": false,
+      "payer": "client",
+      "period": "one_time",
+      "purpose": "production",
+      "title": "Optional local equipment"
+    }
+  ],
+  "estimation_profile": "ai_collaborative_v1",
+  "gross_profit": "9200.00",
+  "labor_cost": {
+    "client": "0.00",
+    "vendor": "26800.00"
+  },
+  "labor_reservations": [],
+  "packages": [
+    {
+      "agent_hours": "4",
+      "deliverable": "Shared authorization and retrieval delivery record",
+      "depends_on": [],
+      "end_day": 1,
+      "external_wait_days": "0",
+      "id": "P1",
+      "owner": "fde",
+      "person_hours": "8",
+      "start_day": 1,
+      "title": "Shared authorization and retrieval foundation",
+      "vendor_labor_cost": "1600.00"
+    },
+    {
+      "agent_hours": "4",
+      "deliverable": "Business assistant development delivery record",
+      "depends_on": [
+        "P1"
+      ],
+      "end_day": 11,
+      "external_wait_days": "0",
+      "id": "P2",
+      "owner": "fde",
+      "person_hours": "80",
+      "start_day": 2,
+      "title": "Business assistant development",
+      "vendor_labor_cost": "16000.00"
+    },
+    {
+      "agent_hours": "4",
+      "deliverable": "Business configuration and feedback delivery record",
+      "depends_on": [
+        "P2"
+      ],
+      "end_day": 13,
+      "external_wait_days": "0",
+      "id": "P3",
+      "owner": "fde",
+      "person_hours": "16",
+      "start_day": 12,
+      "title": "Business configuration and feedback revisions",
+      "vendor_labor_cost": "3200.00"
+    },
+    {
+      "agent_hours": "4",
+      "deliverable": "Functional and regression test delivery record",
+      "depends_on": [
+        "P2"
+      ],
+      "end_day": 14,
+      "external_wait_days": "0",
+      "id": "P4",
+      "owner": "qa",
+      "person_hours": "24",
+      "start_day": 12,
+      "title": "Functional and regression testing",
+      "vendor_labor_cost": "3000.00"
+    },
+    {
+      "agent_hours": "4",
+      "deliverable": "Risk treatment delivery record",
+      "depends_on": [
+        "P4"
+      ],
+      "end_day": 15,
+      "external_wait_days": "0",
+      "id": "P5",
+      "owner": "fde",
+      "person_hours": "8",
+      "start_day": 15,
+      "title": "Risk treatment allowance",
+      "vendor_labor_cost": "1600.00"
+    },
+    {
+      "agent_hours": "4",
+      "deliverable": "Deployment and handoff delivery record",
+      "depends_on": [
+        "P3",
+        "P4"
+      ],
+      "end_day": 15,
+      "external_wait_days": "0",
+      "id": "P6",
+      "owner": "ops",
+      "person_hours": "8",
+      "start_day": 15,
+      "title": "Deployment and handoff",
+      "vendor_labor_cost": "1400.00"
+    }
+  ],
+  "payment_basis": "ex_tax",
+  "payment_total": "36800.00",
+  "payments": [
+    {
+      "amount": "11040.00",
+      "id": "M1",
+      "milestone": "Startup and scope confirmation",
+      "ratio": "0.3"
+    },
+    {
+      "amount": "14720.00",
+      "id": "M2",
+      "milestone": "Core capabilities complete",
+      "ratio": "0.4"
+    },
+    {
+      "amount": "11040.00",
+      "id": "M3",
+      "milestone": "Acceptance and handoff",
+      "ratio": "0.3"
+    }
+  ],
+  "person_hours": {
+    "client": "0",
+    "vendor": "144"
+  },
+  "project": {
+    "change_reason": "Initial teaching calculation example",
+    "currency": "CNY",
+    "date": "2026-09-23",
+    "hours_per_day": "8",
+    "name": "Teaching example: AI business assistant delivery",
+    "status": "Teaching assumption; pending confirmation",
+    "version": "v1"
+  },
+  "public_facts": {
+    "client_development_api_budget": "20.00",
+    "client_incremental_known": "36820.00",
+    "client_one_time_known": "20.00",
+    "duration_days": "15",
+    "payment_total": "36800.00",
+    "public_api_basis_table": "| Item | Model and price date | Usage status and basis | Estimated cost | Budget |\n| --- | --- | --- | --- | --- |\n| Client development API budget | Example model A / 2026-09-23 | Estimation assumption: Eight slices, each with five rounds covering first implementation, test generation, normal repair, regression, and handoff; 12 requests per round with 12,000 input and 1,200 output tokens each; not measured. | 12.10 | 20.00 |",
+    "public_expense_table": "| Expense | Payer | Period | Amount | Notes |\n| --- | --- | --- | --- | --- |\n| Client development API budget | Client | One-time | 20.00 | Client expense |\n| Estimated production resources | Client | Monthly | 1000.00 | Recurring expense listed separately |\n| Optional local equipment | Client | One-time | To be determined | Equipment quoted separately |",
+    "public_payment_table": "| Milestone | Share | Amount (excluding tax) |\n| --- | --- | --- |\n| Startup and scope confirmation | 30.0% | 11040.00 |\n| Core capabilities complete | 40.0% | 14720.00 |\n| Acceptance and handoff | 30.0% | 11040.00 |",
+    "public_quote_table": "| Service item | Price excluding tax |\n| --- | --- |\n| Shared authorization and retrieval foundation | 2133.33 |\n| Business assistant development | 21333.33 |\n| Business configuration and feedback revisions | 4266.67 |\n| Functional and regression testing | 4000.00 |\n| Risk treatment allowance | 2133.33 |\n| Deployment and handoff | 1866.67 |\n| Temporary development resources | 1066.67 |",
+    "public_schedule_table": "| Work package | Owner | Start day | End day | Deliverable |\n| --- | --- | --- | --- | --- |\n| Shared authorization and retrieval foundation | FDE engineer (fde) | 1 | 1 | Shared authorization and retrieval delivery record |\n| Business assistant development | FDE engineer (fde) | 2 | 11 | Business assistant development delivery record |\n| Business configuration and feedback revisions | FDE engineer (fde) | 12 | 13 | Business configuration and feedback delivery record |\n| Functional and regression testing | QA engineer (qa) | 12 | 14 | Functional and regression test delivery record |\n| Risk treatment allowance | FDE engineer (fde) | 15 | 15 | Risk treatment delivery record |\n| Deployment and handoff | Operations engineer (ops) | 15 | 15 | Deployment and handoff delivery record |",
+    "service_price_ex_tax": "36800.00",
+    "service_price_inc_tax": "Pending confirmation",
+    "tax_amount": "Pending confirmation",
+    "vendor_person_hours": "144"
+  },
+  "quote_items": [
+    {
+      "id": "P1",
+      "service_price_ex_tax": "2133.33",
+      "title": "Shared authorization and retrieval foundation"
+    },
+    {
+      "id": "P2",
+      "service_price_ex_tax": "21333.33",
+      "title": "Business assistant development"
+    },
+    {
+      "id": "P3",
+      "service_price_ex_tax": "4266.67",
+      "title": "Business configuration and feedback revisions"
+    },
+    {
+      "id": "P4",
+      "service_price_ex_tax": "4000.00",
+      "title": "Functional and regression testing"
+    },
+    {
+      "id": "P5",
+      "service_price_ex_tax": "2133.33",
+      "title": "Risk treatment allowance"
+    },
+    {
+      "id": "P6",
+      "service_price_ex_tax": "1866.67",
+      "title": "Deployment and handoff"
+    },
+    {
+      "id": "expense:E1",
+      "service_price_ex_tax": "1066.67",
+      "title": "Temporary development resources"
+    }
+  ],
+  "recurring": {
+    "client:month": "1000.00"
+  },
+  "schema_version": 1,
+  "service_cost": "27600.00",
+  "service_price_ex_tax": "36800.00",
+  "service_price_inc_tax": null,
+  "tax_amount": null,
+  "unquoted_expenses": [],
+  "vendor_person_days": "18",
+  "workload": [
+    {
+      "cost_method": "hourly",
+      "day": 1,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P1",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 2,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 3,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 4,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 5,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 6,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 7,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 8,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 9,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 10,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 11,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P2",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 12,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P3",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 13,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P3",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 12,
+      "hours": "8",
+      "internal_cost": "1000.00",
+      "package_id": "P4",
+      "payer": "vendor",
+      "person_id": "qa"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 13,
+      "hours": "8",
+      "internal_cost": "1000.00",
+      "package_id": "P4",
+      "payer": "vendor",
+      "person_id": "qa"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 14,
+      "hours": "8",
+      "internal_cost": "1000.00",
+      "package_id": "P4",
+      "payer": "vendor",
+      "person_id": "qa"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 15,
+      "hours": "8",
+      "internal_cost": "1600.00",
+      "package_id": "P5",
+      "payer": "vendor",
+      "person_id": "fde"
+    },
+    {
+      "cost_method": "hourly",
+      "day": 15,
+      "hours": "8",
+      "internal_cost": "1400.00",
+      "package_id": "P6",
+      "payer": "vendor",
+      "person_id": "ops"
+    }
+  ]
+}

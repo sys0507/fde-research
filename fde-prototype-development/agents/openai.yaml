@@ -1,0 +1,4 @@
+interface:
+  display_name: "Business prototype"
+  short_description: "Prepare a development handoff or an interactive prototype"
+  default_prompt: "Use $fde-prototype-development. Prepare a complete prototype development handoff."

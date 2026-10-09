@@ -1,0 +1,8 @@
+$ /usr/bin/python3 -B /home/claude/v2/skills/plan-ai-project-delivery/scripts/finalize_word.py --renderer-mode generic --docx /tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/B-accepted-substitution/client/report.docx --output-dir /tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/B-accepted-substitution/qa --renderer /home/claude/v2/skills/plan-ai-project-delivery/scripts/render_word_generic.py --soffice /usr/bin/soffice --font-substitute Times New Roman=Liberation Serif --font-substitute Arial=Liberation Sans
+[cwd] /home/claude/v2/skills/plan-ai-project-delivery/scripts
+[exit] 0
+
+--- stdout ---
+{"status": "FIELDS_UPDATED_VISUAL_REVIEW_REQUIRED", "pages": 6, "passes": 2, "report": "/tmp/claude-0/-home-claude/2f4efce9-8b9c-5a1c-84ae-bdf019ee515d/scratchpad/evidence-2.2.1/en/cases/B-accepted-substitution/qa/word-finalization.json"}
+
+--- stderr ---

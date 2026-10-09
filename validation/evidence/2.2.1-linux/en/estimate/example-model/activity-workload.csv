@@ -1,0 +1,24 @@
+﻿package_id,id,person_id,category,activity,quantity,unit,unit_hours,hours,basis
+P1,H1,fde,prepare,Inspect reusable retrieval and authorization configuration,1,item,2,2,Independent example assumes existing foundation services; inventory configuration and permission contracts
+P1,H2,fde,decide,Confirm two access boundaries,2,item,1,2,Review boundaries instead of rebuilding the account platform
+P1,H3,fde,review,Review agent configuration and test results,2,item,1,2,"Two rounds, one active human hour each"
+P1,H4,fde,integrate,Connect in a controlled environment and spot-check,1,item,2,2,Limited integration and records
+P2,H1,fde,prepare,"Prepare interfaces, samples, and acceptance guidance for cross-layer slices",8,item,2,16,Eight delivery slices with existing prototype and shared services
+P2,H2,fde,decide,Confirm key decisions on tool permissions and data writes,8,item,1,8,One design judgment per slice
+P2,H3,fde,review,Review agent first implementation and normal repairs,16,item,2,32,First version plus one normal repair round per slice; two active human hours each
+P2,H4,fde,integrate,Integrate in the actual environment and diagnose exceptions,8,item,3,24,"Three hours per slice, excluding unattended execution"
+P3,H1,fde,prepare,Organize business configuration feedback,4,item,1,4,Parameter feedback for four existing function types
+P3,H2,fde,review,Review agent configuration updates,4,item,1,4,One hour per type
+P3,H3,fde,integrate,Integrate configuration and demonstrate to users,4,item,2,8,Two hours per type including records
+P4,H1,qa,prepare,Define reference outcomes and high-risk tags for 40 regression cases,1,item,4,4,Example assumes business materials already support the reference outcomes
+P4,H2,qa,verify,Manually review 10 high-risk results,10,case,0.2,2.0,"Other cases run in batches with deterministic assertions, not separate manual retests"
+P4,H3,qa,review,Review diagnosis and reruns for an expected six failures,6,case,0.25,1.50,Failure rate is a planning assumption; replace it with actual counts after execution
+P4,H4,qa,decide,Confirm regression conclusions,1,item,0.5,0.5,Four activities total eight hours; automated execution is separate
+P4,H5,qa,verify,Verify real permissions and exception recovery,4,item,3,12,"Four high-impact conditions, three hours each"
+P4,H6,qa,integrate,Organize business trial and issue handback,1,item,4,4,Authorized business roles participate; QA organizes records
+P5,H1,fde,prepare,Diagnose certificate or proxy differences,1,item,2,2,Explicit upper bound if the environment risk occurs
+P5,H2,fde,review,Review agent adaptation changes,1,item,2,2,Environment adaptation only
+P5,H3,fde,integrate,Retest the target environment and check rollback,1,item,4,4,Risk contingency; consumption is not guaranteed
+P6,H1,ops,prepare,Confirm deployment window and rollback conditions,1,item,2,2,Operations authorization and resources ready
+P6,H2,ops,review,Review deployment scripts and execution results,1,item,2,2,Agent runs controlled scripts; a person verifies
+P6,H3,ops,integrate,Verify release and record handoff,1,item,4,4,Includes checking recovery steps

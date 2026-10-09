@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI project architecture"
+  short_description: "Research technology choices and deliver a complete design"
+  default_prompt: "Use $design-ai-project-architecture. Design an AI architecture from the business and readiness inputs."

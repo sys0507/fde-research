@@ -1,0 +1,605 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": "Equipment maintenance knowledge assistant: estimation example",
+    "version": "period-example-v1",
+    "date": "2026-09-24",
+    "status": "Teaching assumption; pending confirmation",
+    "currency": "CNY",
+    "hours_per_day": "8",
+    "change_reason": "Reserved-period algorithm example in a different domain; not a quote for a new project"
+  },
+  "requirements": [
+    {
+      "id": "R1",
+      "title": "Maintenance manual retrieval and fault work-order assistance",
+      "disposition": "included",
+      "basis": "Independent algorithm example: manual Q&A and read-only work-order links; no equipment control"
+    }
+  ],
+  "people": [
+    {
+      "id": "fde",
+      "role": "FDE engineer",
+      "payer": "vendor",
+      "hourly_cost": "0",
+      "capacity_hours_per_day": "8",
+      "available_from": 1,
+      "available_to": 30,
+      "overrides": {},
+      "costing": {
+        "method": "reserved_period",
+        "periods": [
+          {
+            "id": "build",
+            "start_day": 1,
+            "end_day": 20,
+            "salary": "24000",
+            "employer_contributions": "4800",
+            "included_overhead": "0",
+            "allocation_share": "1",
+            "basis": "Full reservation for one budget month; verify actual payroll periods separately"
+          }
+        ],
+        "outside_period_hourly_cost": "180",
+        "outside_period_basis": "Other projects can be assigned during support; allocate four hours of fully loaded cost"
+      }
+    },
+    {
+      "id": "qa",
+      "role": "QA engineer",
+      "payer": "vendor",
+      "hourly_cost": "150",
+      "capacity_hours_per_day": "8",
+      "available_from": 1,
+      "available_to": 30,
+      "overrides": {}
+    },
+    {
+      "id": "ops",
+      "role": "Operations engineer",
+      "payer": "vendor",
+      "hourly_cost": "200",
+      "capacity_hours_per_day": "8",
+      "available_from": 1,
+      "available_to": 30,
+      "overrides": {}
+    }
+  ],
+  "packages": [
+    {
+      "id": "P1",
+      "title": "Maintenance assistant construction and pilot",
+      "kind": "build",
+      "owner": "fde",
+      "requirement_ids": [
+        "R1"
+      ],
+      "deliverable": "Traceable maintenance answers and read-only work-order links",
+      "done_when": "Agreed delivery materials confirmed; this example is not measured acceptance",
+      "estimate_basis": "Activity quantities and unit active hours are in human_effort; committed payroll does not vary with active hours. All quantities are independent example assumptions.",
+      "start_day": 1,
+      "end_day": 20,
+      "depends_on": [],
+      "agent_hours": 24,
+      "external_wait_days": "0",
+      "allocations": [
+        {
+          "person_id": "fde",
+          "day": 1,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 2,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 3,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 4,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 5,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 6,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 7,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 8,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 9,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 10,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 11,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 12,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 13,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 14,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 15,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 16,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 17,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 18,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 19,
+          "hours": "7"
+        },
+        {
+          "person_id": "fde",
+          "day": 20,
+          "hours": "7"
+        },
+        {
+          "person_id": "qa",
+          "day": 18,
+          "hours": "8"
+        },
+        {
+          "person_id": "ops",
+          "day": 19,
+          "hours": "4"
+        }
+      ],
+      "normal_rework_included": true,
+      "human_effort": [
+        {
+          "id": "H1",
+          "person_id": "fde",
+          "category": "prepare",
+          "activity": "Inventory manuals, work-order interfaces, and reusable components",
+          "quantity": "4",
+          "unit": "item",
+          "unit_hours": "3",
+          "basis": "Four types of original material/components"
+        },
+        {
+          "id": "H2",
+          "person_id": "fde",
+          "category": "decide",
+          "activity": "Decide permission and maintenance-knowledge boundaries",
+          "quantity": "4",
+          "unit": "item",
+          "unit_hours": "2",
+          "basis": "Four key decisions"
+        },
+        {
+          "id": "H3",
+          "person_id": "fde",
+          "category": "prepare",
+          "activity": "Prepare cross-layer delivery slices",
+          "quantity": "12",
+          "unit": "item",
+          "unit_hours": "2",
+          "basis": "Twelve equipment-manual/work-order slices"
+        },
+        {
+          "id": "H4",
+          "person_id": "fde",
+          "category": "review",
+          "activity": "Review first versions and normal repairs",
+          "quantity": "24",
+          "unit": "item",
+          "unit_hours": "2",
+          "basis": "Two reviews per slice"
+        },
+        {
+          "id": "H5",
+          "person_id": "fde",
+          "category": "integrate",
+          "activity": "Integrate actual work orders and diagnose exceptions",
+          "quantity": "12",
+          "unit": "item",
+          "unit_hours": "3",
+          "basis": "Three hours per slice"
+        },
+        {
+          "id": "H6",
+          "person_id": "fde",
+          "category": "coordinate",
+          "activity": "Pilot coordination and handoff records",
+          "quantity": "4",
+          "unit": "item",
+          "unit_hours": "3",
+          "basis": "Four coordination activities with outputs"
+        },
+        {
+          "id": "qa-H1",
+          "person_id": "qa",
+          "category": "prepare",
+          "activity": "Regression criteria and sample stratification",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "4",
+          "basis": "Forty maintenance Q&A samples"
+        },
+        {
+          "id": "qa-H2",
+          "person_id": "qa",
+          "category": "verify",
+          "activity": "Human verification of high-risk results",
+          "quantity": "10",
+          "unit": "case",
+          "unit_hours": "0.2",
+          "basis": "Ten samples involving equipment model and maintenance boundaries"
+        },
+        {
+          "id": "qa-H3",
+          "person_id": "qa",
+          "category": "review",
+          "activity": "Diagnose failed samples and confirm repairs",
+          "quantity": "6",
+          "unit": "case",
+          "unit_hours": "0.25",
+          "basis": "Six expected cases need human review; update from actual results"
+        },
+        {
+          "id": "qa-H4",
+          "person_id": "qa",
+          "category": "decide",
+          "activity": "Form acceptance conclusions",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "0.5",
+          "basis": "Automated regression activities total eight active hours"
+        },
+        {
+          "id": "ops-H1",
+          "person_id": "ops",
+          "category": "prepare",
+          "activity": "Confirm deployment authority and resources",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "1",
+          "basis": "Existing test environment"
+        },
+        {
+          "id": "ops-H2",
+          "person_id": "ops",
+          "category": "review",
+          "activity": "Check deployment scripts and recovery steps",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "1",
+          "basis": "Agent generates and executes; operations reviews"
+        },
+        {
+          "id": "ops-H3",
+          "person_id": "ops",
+          "category": "integrate",
+          "activity": "Controlled-environment operations and return records",
+          "quantity": "1",
+          "unit": "item",
+          "unit_hours": "2",
+          "basis": "Operations owns actual release authority"
+        }
+      ],
+      "agent_work": [
+        {
+          "id": "A1",
+          "activity": "Across 12 slices, adapt existing pages, implement backend/knowledge workflows, generate/run regression, and repair findings",
+          "output": "Runnable maintenance knowledge assistant, automated regression report, and deployment package",
+          "verification": "FDE reviews boundaries/integration; QA confirms high-risk results; operations confirms deployment",
+          "reviewer": "fde",
+          "review_effort_ids": [
+            "H4"
+          ],
+          "runtime_basis": "Twelve slices at roughly two unattended hours each; not 24 human hours"
+        },
+        {
+          "id": "A2",
+          "activity": "Run 40 regression cases in batches, preserve assertions/failure traces, and rerun after normal repairs",
+          "output": "Automated result set and failure differences",
+          "verification": "QA verifies high-risk and failed samples and records conclusions",
+          "reviewer": "qa",
+          "review_effort_ids": [
+            "qa-H2",
+            "qa-H3"
+          ],
+          "runtime_basis": "Included in this package's 24-hour agent window; batch tests take about one hour without extra human hours"
+        }
+      ],
+      "dependency_basis": []
+    },
+    {
+      "id": "P2",
+      "title": "Low-frequency post-acceptance support",
+      "kind": "handover",
+      "owner": "fde",
+      "requirement_ids": [
+        "R1"
+      ],
+      "deliverable": "Post-acceptance support delivery record",
+      "done_when": "Agreed delivery materials confirmed; this example is not measured acceptance",
+      "estimate_basis": "Activity quantities and unit active hours are in human_effort; committed payroll does not vary with active hours. All quantities are independent example assumptions.",
+      "start_day": 21,
+      "end_day": 30,
+      "depends_on": [
+        "P1"
+      ],
+      "agent_hours": 2,
+      "external_wait_days": "0",
+      "allocations": [
+        {
+          "person_id": "fde",
+          "day": 25,
+          "hours": "4"
+        }
+      ],
+      "normal_rework_included": true,
+      "human_effort": [
+        {
+          "id": "H1",
+          "person_id": "fde",
+          "category": "prepare",
+          "activity": "Classify trial issues",
+          "quantity": "2",
+          "unit": "item",
+          "unit_hours": "0.5",
+          "basis": "Assume two low-frequency support requests"
+        },
+        {
+          "id": "H2",
+          "person_id": "fde",
+          "category": "review",
+          "activity": "Review agent diagnosis and correction",
+          "quantity": "2",
+          "unit": "item",
+          "unit_hours": "0.5",
+          "basis": "Two support requests"
+        },
+        {
+          "id": "H3",
+          "person_id": "fde",
+          "category": "integrate",
+          "activity": "Confirm target-environment results and handback",
+          "quantity": "2",
+          "unit": "item",
+          "unit_hours": "1",
+          "basis": "Two support requests"
+        }
+      ],
+      "agent_work": [
+        {
+          "id": "A1",
+          "activity": "Diagnose trial issues and produce targeted fixes/tests",
+          "output": "Confirmed support record and repair package",
+          "verification": "FDE reviews scope and results",
+          "reviewer": "fde",
+          "review_effort_ids": [
+            "H2"
+          ],
+          "runtime_basis": "Assume two execution windows of about one hour each"
+        }
+      ],
+      "dependency_basis": [
+        {
+          "predecessor_id": "P1",
+          "kind": "acceptance",
+          "required_output": "Accepted pilot version and support handoff record",
+          "why_blocks_start": "This package is low-frequency support after acceptance, not construction-stage debugging."
+        }
+      ]
+    }
+  ],
+  "expenses": [
+    {
+      "id": "E1",
+      "title": "Build and test resources",
+      "payer": "vendor",
+      "period": "one_time",
+      "category": "compute",
+      "amount": "900",
+      "basis": "Independent small example assumes one budget month of temporary resources",
+      "task_ids": [
+        "P1"
+      ],
+      "purpose": "development"
+    },
+    {
+      "id": "E2",
+      "title": "Corporate indirect support",
+      "payer": "vendor",
+      "period": "one_time",
+      "category": "other",
+      "amount": "1200",
+      "basis": "Finance and contract administration not included in payroll, specialist support, or environment; no duplicate FDE project management",
+      "task_ids": [
+        "P1"
+      ],
+      "purpose": "other"
+    },
+    {
+      "id": "E3",
+      "title": "Client development API allowance",
+      "payer": "client",
+      "period": "one_time",
+      "category": "api",
+      "amount": "140",
+      "basis": "Slice/regression requests estimate 109.44 with budget 140; example unit prices are not current supplier prices.",
+      "task_ids": [
+        "P1"
+      ],
+      "purpose": "development",
+      "api": {
+        "model": "Example model B",
+        "price_date": "2026-09-23",
+        "source": "Independent algorithm-example price; consult supplier pricing for actual work",
+        "usage_status": "estimated",
+        "usage_basis": "Twelve slices times three first-version/test/normal-repair rounds times 40 requests per round; 30,000 input and 2,000 output tokens each.",
+        "budget": "140",
+        "buffer_basis": "30.56 covers approximately 28% usage variation in context or normal-repair requests, not a quotation percentage; settle against actual invoices.",
+        "lines": [
+          {
+            "model": "Example model B",
+            "token_type": "input",
+            "kind": "Uncached input",
+            "quantity_million_tokens": "43.2",
+            "price_per_million": "2"
+          },
+          {
+            "model": "Example model B",
+            "token_type": "output",
+            "kind": "Output",
+            "quantity_million_tokens": "2.88",
+            "price_per_million": "8"
+          }
+        ],
+        "request_groups": [
+          {
+            "id": "G1",
+            "model": "Example model B",
+            "phase": "First implementation, testing, and normal repair",
+            "agent_work_refs": [
+              "P1:A1",
+              "P1:A2"
+            ],
+            "runs": 36,
+            "requests_per_run": 40,
+            "context_components": [
+              {
+                "id": "task",
+                "description": "Task constraints and interfaces",
+                "tokens": 4000,
+                "basis": "Assumed average input"
+              },
+              {
+                "id": "code",
+                "description": "Relevant code, sampled manuals, and tests",
+                "tokens": 18000,
+                "basis": "Assumed slice-specific file set"
+              },
+              {
+                "id": "history",
+                "description": "Tool traces and repeated history",
+                "tokens": 8000,
+                "basis": "Assumed average history for multistep tool calls"
+              }
+            ],
+            "output_tokens_per_request": 2000,
+            "iteration_basis": "Twelve slices times three rounds, 40 requests each; testing includes generated automated execution and failure repair, not one request per business sample",
+            "evidence": "Expert assumptions for an independent example; no measurement records and no measured-status claim"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E4",
+      "title": "Production resource budget",
+      "payer": "client",
+      "period": "month",
+      "category": "compute",
+      "amount": null,
+      "quote_status": "unquoted",
+      "basis": "Resource specifications and internal settlement pending; not zero",
+      "task_ids": [],
+      "purpose": "production"
+    }
+  ],
+  "pricing": {
+    "method": "fixed",
+    "rate": "0.20",
+    "tax_rate": null,
+    "tax_note": "Finance must confirm tax and invoicing; current quotation excludes tax",
+    "payment_basis": "ex_tax",
+    "validity": "Illustrative 30-day validity; confirm for a formal quote",
+    "payment_terms_status": "Teaching proposal; commercial confirmation pending",
+    "payments": [
+      {
+        "id": "M1",
+        "milestone": "Startup and scope confirmation",
+        "ratio": "0.3"
+      },
+      {
+        "id": "M2",
+        "milestone": "Core capabilities complete",
+        "ratio": "0.4"
+      },
+      {
+        "id": "M3",
+        "milestone": "Acceptance and handoff",
+        "ratio": "0.3"
+      }
+    ],
+    "fixed_price": "42500"
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "visibility": "client",
+      "status": "preset",
+      "statement": "Reserved-period cost algorithm example, not customer approval or a universal price",
+      "reason": "Practice quotation and scheduling",
+      "basis": "Teaching example",
+      "affects": "Scope, expenses, schedule, and payments",
+      "verify": "Client business, finance, and delivery owners confirm their respective areas before implementation",
+      "change_action": "Revise the model version and recalculate"
+    },
+    {
+      "id": "A2",
+      "visibility": "internal",
+      "status": "preset",
+      "statement": "Personnel costs and target margin are teaching assumptions only",
+      "reason": "Demonstrate internal cost derivation",
+      "basis": "Teaching example",
+      "affects": "Service quotation",
+      "verify": "Vendor finance confirms actual fully loaded costs",
+      "change_action": "Update internal costs and recalculate without directly disclosing them to the client"
+    }
+  ],
+  "estimation_profile": "ai_collaborative_v1"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "AVAILABLE",
+  "expected": [
+    "Times New Roman",
+    "Arial"
+  ],
+  "matches": {
+    "Times New Roman": [
+      "liberationserif"
+    ],
+    "Arial": [
+      "liberationsans"
+    ]
+  },
+  "sources": [
+    "fontconfig fc-list"
+  ],
+  "notes": [],
+  "scope": "Local font registration only; renderer discovery and actual PDF still require verification."
+}

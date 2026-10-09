@@ -1,0 +1,132 @@
+{
+  "status": "FIELDS_UPDATED_VISUAL_REVIEW_REQUIRED",
+  "docx": "report.docx",
+  "sha256": "2b4b6411c239a1c2932284d785b0ee19c4c405a1d543961817119240bb0f6662",
+  "source_sha256": "a2ff36eb39675e0f241a848161273c28510d6cf37095a9f421b20c96baeb3bdb",
+  "attachment_links": [],
+  "heading_count": 5,
+  "table_count": 3,
+  "figures": [],
+  "sections": 3,
+  "body_font": "Liberation Serif",
+  "heading_font": "Liberation Sans",
+  "font_availability": "AVAILABLE",
+  "toc": "verified_native_toc_h1_h2",
+  "layout": {
+    "chapter_page_break": true,
+    "cover_numbered": false,
+    "front_matter_numbering": "lowerRoman",
+    "body_start": 1,
+    "footer_pt": 9
+  },
+  "toc_heading_count": 5,
+  "font_verification": {
+    "status": "MATCHED",
+    "pdf_sha256": "15fe9e974f3edc26c363c80010d76c5ec9ea0a556a93afa756090b84b5915a5a",
+    "page_count": 6,
+    "text_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "pages_without_inspectable_text": [],
+    "expected": [
+      "Liberation Serif",
+      "Liberation Sans"
+    ],
+    "allowed_substitutions": {},
+    "used_fonts": [
+      {
+        "name": "BAAAAA+LiberationSans",
+        "family": "liberationsans",
+        "pages": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "CAAAAA+LiberationSerif",
+        "family": "liberationserif",
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "DAAAAA+LiberationSerif-Bold",
+        "family": "liberationserif",
+        "pages": [
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      {
+        "name": "EAAAAA+LiberationSans-Bold",
+        "family": "liberationsans",
+        "pages": [
+          2,
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "unexpected_families": [],
+    "substitutions_used": [],
+    "expected_not_observed": [],
+    "font_resources": [
+      {
+        "name": "BAAAAA+LiberationSans",
+        "family": "liberationsans",
+        "embedded": true
+      },
+      {
+        "name": "CAAAAA+LiberationSerif",
+        "family": "liberationserif",
+        "embedded": true
+      },
+      {
+        "name": "DAAAAA+LiberationSerif-Bold",
+        "family": "liberationserif",
+        "embedded": true
+      },
+      {
+        "name": "EAAAAA+LiberationSans-Bold",
+        "family": "liberationsans",
+        "embedded": true
+      }
+    ],
+    "scope": "PDF text font names and embedding evidence only; image text, glyph correctness, layout and visual acceptance remain unverified."
+  },
+  "runtime_profile": "generic",
+  "field_update": {
+    "before_sha256": "fa2b16b488820b0c47eeba5417aa8d2d5cf203b09714794f2a20146f5ea20f2a",
+    "page_count": 6,
+    "page_map": {
+      "chapter_1": 1,
+      "chapter_2": 1,
+      "chapter_3": 2,
+      "chapter_4": 2,
+      "chapter_5": 3
+    },
+    "physical_page_map": {
+      "chapter_1": 4,
+      "chapter_2": 4,
+      "chapter_3": 5,
+      "chapter_4": 5,
+      "chapter_5": 6
+    },
+    "passes": 2,
+    "method": "native_toc_result_rebuild_from_rendered_heading_pages"
+  }
+}

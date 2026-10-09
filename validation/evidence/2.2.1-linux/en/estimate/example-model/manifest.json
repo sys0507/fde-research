@@ -1,0 +1,17 @@
+{
+  "files": {
+    "activity-workload.csv": "2d3cbcbd8727201982ba65c30159f80401c30d78c3b2cc084a7bc6399c04b3ac",
+    "changes.json": "441804f3038e5679259971f23c6a0c40147e6e185e6ee3b035dcd2b18c8ff568",
+    "collaboration-evidence.json": "c8e1ed786753e63627aed96a85a12d97d7cca6ff0c8636d27fb31ea48b50f7d8",
+    "costs.csv": "e9aaa896a7159deeb504595683a10c855035ba6a059b187c0ade740f351021f4",
+    "labor-reservations.csv": "45dc8a9cec00859299cee79338fb33654f308e22108c953c901d97a7a906de79",
+    "model.json": "0659b86b26fdc8bf773cdab0c06e310be83818e108a6f33f87c55be2835ba6eb",
+    "numeric-facts.md": "07c067fe696fc0c0120fba4c143b883d7a5ffb3a7d93299c6b44c6632bb38df1",
+    "payments.csv": "c43c6d18a21109315490f45a04a71aaff90a9af805bb8f95ce803c3cb05e8215",
+    "results.json": "bff99b5682957487b91a13b8d9b47a74b56864034ddc2d516aa50424707cf156",
+    "schedule.csv": "4605db825af3c457acd449eb48a4599be680681fb5fc1e4bb6a32eb3ce92893f",
+    "workload.csv": "371d023d05feb8028277ca531cc7acb20b99ecb1559abe74d62fc55b75c09ab0"
+  },
+  "renders": [],
+  "schema_version": 1
+}

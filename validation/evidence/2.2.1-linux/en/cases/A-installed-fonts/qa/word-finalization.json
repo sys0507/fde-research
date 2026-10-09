@@ -1,0 +1,84 @@
+{
+  "status": "FIELDS_UPDATED_VISUAL_REVIEW_REQUIRED",
+  "docx_sha256": "2b4b6411c239a1c2932284d785b0ee19c4c405a1d543961817119240bb0f6662",
+  "renderer": "/home/claude/v2/skills/plan-ai-project-delivery/scripts/render_word_generic.py",
+  "page_count": 6,
+  "inspected_pages": [],
+  "passes": [
+    {
+      "iteration": 1,
+      "docx_sha256": "ee37abca2a571a65edbe52423ca34afc035f30d409a571afa229e1a238cf9408",
+      "page_count": 6,
+      "page_map": {
+        "chapter_1": 1,
+        "chapter_2": 1,
+        "chapter_3": 2,
+        "chapter_4": 2,
+        "chapter_5": 3
+      },
+      "physical_page_map": {
+        "chapter_1": 4,
+        "chapter_2": 4,
+        "chapter_3": 5,
+        "chapter_4": 5,
+        "chapter_5": 6
+      }
+    },
+    {
+      "iteration": 2,
+      "docx_sha256": "2b4b6411c239a1c2932284d785b0ee19c4c405a1d543961817119240bb0f6662",
+      "page_count": 6,
+      "page_map": {
+        "chapter_1": 1,
+        "chapter_2": 1,
+        "chapter_3": 2,
+        "chapter_4": 2,
+        "chapter_5": 3
+      },
+      "physical_page_map": {
+        "chapter_1": 4,
+        "chapter_2": 4,
+        "chapter_3": 5,
+        "chapter_4": 5,
+        "chapter_5": 6
+      }
+    }
+  ],
+  "local_links": [],
+  "final_pdf": "pass-2/report.pdf",
+  "page_images": [
+    {
+      "path": "pass-2/page-1.png",
+      "sha256": "72b942bd499a517de4ca0226736fcf2f2d5720007d0f872a4f8a3c0cb749a0df"
+    },
+    {
+      "path": "pass-2/page-2.png",
+      "sha256": "a3f59502c14477e93bfd71d677fe280c77262ca9d495627a3e8d419e16c533e2"
+    },
+    {
+      "path": "pass-2/page-3.png",
+      "sha256": "5d4333bc8af30fa3e83c8513a96bbd2d21a8fa558a89a1cf2ca2defc2ecc7ab6"
+    },
+    {
+      "path": "pass-2/page-4.png",
+      "sha256": "0f124c0051beb5e22faf0e5669d5cf612578f013aea6e742030d06460bed1e03"
+    },
+    {
+      "path": "pass-2/page-5.png",
+      "sha256": "9afbbae80dec462c4b29106fa491e79e6b42a4e78619cc05c3f95337734e9695"
+    },
+    {
+      "path": "pass-2/page-6.png",
+      "sha256": "98d0c7ea1673411cad31c62935130a5bbcc843461441dc6189c3eb43357f0396"
+    }
+  ],
+  "unresolved_issues": [
+    "All final page images require actual visual inspection."
+  ],
+  "runtime_profile": "generic",
+  "font_verification": {
+    "status": "MATCHED",
+    "report": "pdf-fonts.json",
+    "sha256": "28aec11904dc186639aaea8ad4d175a2d5e2de0eddeefc6f76e1ff8d20b0d3fe"
+  }
+}

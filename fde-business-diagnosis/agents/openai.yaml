@@ -1,0 +1,4 @@
+interface:
+  display_name: "Business diagnosis"
+  short_description: "Diagnose real work and assess grounded AI opportunities"
+  default_prompt: "Use $fde-business-diagnosis. Assess current business and recommend grounded AI opportunities."

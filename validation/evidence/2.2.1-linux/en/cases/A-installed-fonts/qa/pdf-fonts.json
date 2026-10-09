@@ -1,0 +1,88 @@
+{
+  "status": "MATCHED",
+  "pdf_sha256": "15fe9e974f3edc26c363c80010d76c5ec9ea0a556a93afa756090b84b5915a5a",
+  "page_count": 6,
+  "text_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "pages_without_inspectable_text": [],
+  "expected": [
+    "Liberation Serif",
+    "Liberation Sans"
+  ],
+  "allowed_substitutions": {},
+  "used_fonts": [
+    {
+      "name": "BAAAAA+LiberationSans",
+      "family": "liberationsans",
+      "pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "CAAAAA+LiberationSerif",
+      "family": "liberationserif",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "name": "DAAAAA+LiberationSerif-Bold",
+      "family": "liberationserif",
+      "pages": [
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "name": "EAAAAA+LiberationSans-Bold",
+      "family": "liberationsans",
+      "pages": [
+        2,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "unexpected_families": [],
+  "substitutions_used": [],
+  "expected_not_observed": [],
+  "font_resources": [
+    {
+      "name": "BAAAAA+LiberationSans",
+      "family": "liberationsans",
+      "embedded": true
+    },
+    {
+      "name": "CAAAAA+LiberationSerif",
+      "family": "liberationserif",
+      "embedded": true
+    },
+    {
+      "name": "DAAAAA+LiberationSerif-Bold",
+      "family": "liberationserif",
+      "embedded": true
+    },
+    {
+      "name": "EAAAAA+LiberationSans-Bold",
+      "family": "liberationsans",
+      "embedded": true
+    }
+  ],
+  "scope": "PDF text font names and embedding evidence only; image text, glyph correctness, layout and visual acceptance remain unverified."
+}

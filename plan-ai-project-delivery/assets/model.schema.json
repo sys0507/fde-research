@@ -1,0 +1,1174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:plan-ai-project-delivery:model:1",
+  "title": "AI delivery estimate model v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project",
+    "requirements",
+    "people",
+    "packages",
+    "expenses",
+    "pricing",
+    "assumptions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "project": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hours_per_day": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+            }
+          ]
+        },
+        "change_reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "date",
+        "status",
+        "currency",
+        "hours_per_day",
+        "change_reason"
+      ]
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disposition": {
+            "enum": [
+              "included",
+              "excluded",
+              "conditional"
+            ]
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "disposition",
+          "basis"
+        ]
+      }
+    },
+    "people": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "payer": {
+            "enum": [
+              "client",
+              "vendor"
+            ]
+          },
+          "hourly_cost": {
+            "oneOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+              }
+            ]
+          },
+          "capacity_hours_per_day": {
+            "oneOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+              }
+            ]
+          },
+          "available_from": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "available_to": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "overrides": {
+            "type": "object",
+            "patternProperties": {
+              "^[1-9][0-9]*$": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "costing": {
+            "type": "object",
+            "required": [
+              "method"
+            ],
+            "properties": {
+              "method": {
+                "enum": [
+                  "hourly",
+                  "reserved_period"
+                ]
+              },
+              "periods": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "start_day",
+                    "end_day",
+                    "salary",
+                    "employer_contributions",
+                    "included_overhead",
+                    "allocation_share",
+                    "basis"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "start_day": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "end_day": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "basis": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "salary": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                        }
+                      ]
+                    },
+                    "employer_contributions": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                        }
+                      ]
+                    },
+                    "included_overhead": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                        }
+                      ]
+                    },
+                    "allocation_share": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "outside_period_hourly_cost": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                  }
+                ]
+              },
+              "outside_period_basis": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "role",
+          "payer",
+          "hourly_cost",
+          "capacity_hours_per_day",
+          "available_from",
+          "available_to"
+        ]
+      }
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "kind": {
+            "enum": [
+              "build",
+              "configure",
+              "reuse",
+              "test",
+              "deploy",
+              "handover",
+              "wait",
+              "risk"
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "deliverable": {
+            "type": "string",
+            "minLength": 1
+          },
+          "done_when": {
+            "type": "string",
+            "minLength": 1
+          },
+          "estimate_basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "shared_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uses_shared": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "start_day": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "end_day": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "agent_hours": {
+            "oneOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+              }
+            ]
+          },
+          "external_wait_days": {
+            "oneOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+              }
+            ]
+          },
+          "allocations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "person_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "day": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "hours": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "person_id",
+                "day",
+                "hours"
+              ]
+            }
+          },
+          "risk_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "normal_rework_included": {
+            "type": "boolean"
+          },
+          "human_effort": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "person_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "activity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "category": {
+                  "enum": [
+                    "prepare",
+                    "decide",
+                    "review",
+                    "integrate",
+                    "verify",
+                    "coordinate",
+                    "manual_implementation"
+                  ]
+                },
+                "quantity": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                    }
+                  ]
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit_hours": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                    }
+                  ]
+                },
+                "basis": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "person_id",
+                "activity",
+                "category",
+                "quantity",
+                "unit",
+                "unit_hours",
+                "basis"
+              ]
+            }
+          },
+          "agent_work": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "activity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "output": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "verification": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "review_effort_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "runtime_basis": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "activity",
+                "output",
+                "verification",
+                "reviewer",
+                "review_effort_ids",
+                "runtime_basis"
+              ]
+            }
+          },
+          "dependency_basis": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "predecessor_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "enum": [
+                    "technical",
+                    "external",
+                    "acceptance"
+                  ]
+                },
+                "required_output": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "why_blocks_start": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "predecessor_id",
+                "kind",
+                "required_output",
+                "why_blocks_start"
+              ]
+            }
+          },
+          "no_agent_work_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "requirement_ids",
+          "kind",
+          "owner",
+          "deliverable",
+          "done_when",
+          "estimate_basis",
+          "start_day",
+          "end_day",
+          "depends_on",
+          "agent_hours",
+          "external_wait_days",
+          "allocations",
+          "normal_rework_included"
+        ]
+      }
+    },
+    "expenses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "payer": {
+            "enum": [
+              "client",
+              "vendor"
+            ]
+          },
+          "period": {
+            "enum": [
+              "one_time",
+              "month",
+              "year"
+            ]
+          },
+          "category": {
+            "enum": [
+              "api",
+              "compute",
+              "tool",
+              "other",
+              "equipment"
+            ]
+          },
+          "amount": {
+            "anyOf": [
+              {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "task_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "api": {
+            "type": "object",
+            "properties": {
+              "model": {
+                "type": "string",
+                "minLength": 1
+              },
+              "price_date": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "usage_basis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lines": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "quantity_million_tokens": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                        }
+                      ]
+                    },
+                    "price_per_million": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                        }
+                      ]
+                    },
+                    "model": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "token_type": {
+                      "enum": [
+                        "input",
+                        "output"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "quantity_million_tokens",
+                    "price_per_million"
+                  ]
+                }
+              },
+              "budget": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                  }
+                ]
+              },
+              "usage_status": {
+                "enum": [
+                  "estimated",
+                  "measured"
+                ]
+              },
+              "request_groups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "model": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "phase": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "agent_work_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "runs": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "requests_per_run": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "context_components": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "description": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "tokens": {
+                            "oneOf": [
+                              {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              {
+                                "type": "string",
+                                "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                              }
+                            ]
+                          },
+                          "basis": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "description",
+                          "tokens",
+                          "basis"
+                        ]
+                      }
+                    },
+                    "output_tokens_per_request": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                        }
+                      ]
+                    },
+                    "iteration_basis": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "model",
+                    "phase",
+                    "agent_work_refs",
+                    "runs",
+                    "requests_per_run",
+                    "context_components",
+                    "output_tokens_per_request",
+                    "iteration_basis",
+                    "evidence"
+                  ]
+                }
+              },
+              "buffer_basis": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "model",
+              "price_date",
+              "source",
+              "usage_basis",
+              "lines",
+              "budget"
+            ]
+          },
+          "purpose": {
+            "enum": [
+              "development",
+              "production",
+              "other"
+            ]
+          },
+          "quote_status": {
+            "enum": [
+              "estimated",
+              "quoted",
+              "unquoted"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "payer",
+          "period",
+          "category",
+          "amount",
+          "basis",
+          "task_ids",
+          "purpose"
+        ]
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "enum": [
+            "gross_margin",
+            "markup",
+            "fixed"
+          ]
+        },
+        "rate": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+            }
+          ]
+        },
+        "fixed_price": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+            }
+          ]
+        },
+        "tax_rate": {
+          "anyOf": [
+            {
+              "oneOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "string",
+                  "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tax_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payment_basis": {
+          "enum": [
+            "ex_tax",
+            "inc_tax"
+          ]
+        },
+        "validity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payment_terms_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "milestone": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ratio": {
+                "oneOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "milestone",
+              "ratio"
+            ]
+          }
+        }
+      },
+      "required": [
+        "method",
+        "tax_rate",
+        "tax_note",
+        "payment_basis",
+        "validity",
+        "payment_terms_status",
+        "payments"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visibility": {
+            "enum": [
+              "client",
+              "internal"
+            ]
+          },
+          "status": {
+            "enum": [
+              "fact",
+              "preset",
+              "confirmed",
+              "revised"
+            ]
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "affects": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verify": {
+            "type": "string",
+            "minLength": 1
+          },
+          "change_action": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "visibility",
+          "status",
+          "statement",
+          "reason",
+          "basis",
+          "affects",
+          "verify",
+          "change_action"
+        ]
+      }
+    },
+    "estimation_profile": {
+      "enum": [
+        "legacy_v1",
+        "ai_collaborative_v1"
+      ],
+      "description": "New full-estimation runs on every supported agent use ai_collaborative_v1; absent is historical compatibility only."
+    }
+  },
+  "$defs": {},
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "estimation_profile"
+        ],
+        "properties": {
+          "estimation_profile": {
+            "const": "ai_collaborative_v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "packages": {
+            "items": {
+              "required": [
+                "human_effort",
+                "agent_work",
+                "dependency_basis"
+              ]
+            }
+          },
+          "expenses": {
+            "items": {
+              "if": {
+                "properties": {
+                  "category": {
+                    "const": "api"
+                  },
+                  "purpose": {
+                    "const": "development"
+                  }
+                },
+                "required": [
+                  "category",
+                  "purpose"
+                ]
+              },
+              "then": {
+                "required": [
+                  "api"
+                ],
+                "properties": {
+                  "api": {
+                    "required": [
+                      "request_groups"
+                    ],
+                    "properties": {
+                      "request_groups": {
+                        "minItems": 1
+                      },
+                      "lines": {
+                        "items": {
+                          "required": [
+                            "model",
+                            "token_type"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

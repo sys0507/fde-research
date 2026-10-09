@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI delivery and quotation"
+  short_description: "Plan delivery, capacity, acceptance, budget, and quotation"
+  default_prompt: "Use $plan-ai-project-delivery. Prepare a complete delivery plan and quotation."

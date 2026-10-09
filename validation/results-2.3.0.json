@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "tests": 106,
+  "suites": [
+    {
+      "suite": "plan-ai-project-delivery/scripts/test_estimate.py",
+      "passed": true,
+      "tests": 68,
+      "exit_code": 0
+    },
+    {
+      "suite": "plan-ai-project-delivery/scripts/test_runtime.py",
+      "passed": true,
+      "tests": 9,
+      "exit_code": 0
+    },
+    {
+      "suite": "design-ai-project-architecture/scripts/test_delivery_profiles.py",
+      "passed": true,
+      "tests": 5,
+      "exit_code": 0
+    },
+    {
+      "suite": "fde-ai-scenario-design/scripts/test_screen_labels.py",
+      "passed": true,
+      "tests": 3,
+      "exit_code": 0
+    },
+    {
+      "suite": "plan-ai-project-delivery/scripts/test_portability.py",
+      "passed": true,
+      "tests": 4,
+      "exit_code": 0
+    },
+    {
+      "suite": "plan-ai-project-delivery/scripts/test_fonts.py",
+      "passed": true,
+      "tests": 5,
+      "exit_code": 0
+    },
+    {
+      "suite": "scripts/test_package.py",
+      "passed": true,
+      "tests": 8,
+      "exit_code": 0
+    },
+    {
+      "suite": "scripts/test_release.py",
+      "passed": true,
+      "tests": 4,
+      "exit_code": 0
+    }
+  ],
+  "edition": "en",
+  "version": "2.3.0",
+  "checked_date": "2026-10-09",
+  "platform": "Windows",
+  "environment": "Fresh Python 3.12 environment; installed only requirements-test.txt and resolved dependencies",
+  "github_actions_executed": false,
+  "real_office_conversion_executed": false
+}

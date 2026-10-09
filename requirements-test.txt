@@ -1,0 +1,7 @@
+# Python 3.12. Direct dependency pins; pip resolves their transitive requirements.
+python-docx==1.2.0
+Pillow==12.3.0
+lxml==6.1.1
+pypdf==6.10.0
+pdfplumber==0.11.9
+pypdfium2==5.13.0

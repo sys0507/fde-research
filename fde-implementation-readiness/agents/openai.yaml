@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementation readiness"
+  short_description: "Verify technical conditions and prepare a design handoff"
+  default_prompt: "Use $fde-implementation-readiness. Review implementation conditions and produce a design handoff."
